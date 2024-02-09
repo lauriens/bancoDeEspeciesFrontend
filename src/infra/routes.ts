@@ -1,5 +1,4 @@
 import Reference from '../pages/reference/reference'
-import Specie from "../pages/specie/specie"
 import Home from "../pages/home/home"
 import Domain from '../pages/upload/taxonomy/forms/domain/domain'
 import Kingdom from '../pages/upload/taxonomy/forms/kingdom/kingdom'
@@ -8,6 +7,7 @@ import Class from '../pages/upload/taxonomy/forms/class/class'
 import Order from '../pages/upload/taxonomy/forms/order/order'
 import Family from '../pages/upload/taxonomy/forms/family/family'
 import Genus from '../pages/upload/taxonomy/forms/genus/genus'
+import Specie from '../pages/upload/taxonomy/forms/specie/specie'
 
 const routes = [
     {
@@ -48,6 +48,10 @@ const routes = [
             {
                 path: '/genero',
                 Component: Genus
+            },
+            {
+                path: '/especie',
+                Component: Specie
             }
         ]
     }

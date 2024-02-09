@@ -7,4 +7,9 @@ type Specie = {
     genus?: Genus
 }
 
+export type CreateSpecie = {
+    Name: string
+    GenusId?: number
+}
+
 export default Specie
