@@ -62,6 +62,17 @@ const routes = [
                                 >
                                     Filo
                                 </NavLink>
+                    },
+                    {
+                        key: 'Classe',
+                        label: <NavLink
+                                    to="/classe"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Classe
+                                </NavLink>
                     }
                 ]
             },

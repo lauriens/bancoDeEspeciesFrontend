@@ -7,4 +7,9 @@ type Class = {
     phylum?: Phylum
 }
 
+export type CreateClass = {
+    Name: string
+    PhylumId?: number
+}
+
 export default Class
