@@ -7,4 +7,9 @@ type Genus = {
     family?: Family
 }
 
+export type CreateGenus = {
+    Name: string
+    FamilyId?: number
+}
+
 export default Genus

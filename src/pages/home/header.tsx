@@ -95,6 +95,17 @@ const routes = [
                                 >
                                     Família
                                 </NavLink>
+                    },
+                    {
+                        key: 'Genero',
+                        label: <NavLink
+                                    to="/genero"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Gênero
+                                </NavLink>
                     }
                 ]
             },

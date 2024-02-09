@@ -7,6 +7,7 @@ import Phylum from '../pages/upload/taxonomy/forms/phylum/phylum'
 import Class from '../pages/upload/taxonomy/forms/class/class'
 import Order from '../pages/upload/taxonomy/forms/order/order'
 import Family from '../pages/upload/taxonomy/forms/family/family'
+import Genus from '../pages/upload/taxonomy/forms/genus/genus'
 
 const routes = [
     {
@@ -43,6 +44,10 @@ const routes = [
             {
                 path: '/familia',
                 Component: Family
+            },
+            {
+                path: '/genero',
+                Component: Genus
             }
         ]
     }
