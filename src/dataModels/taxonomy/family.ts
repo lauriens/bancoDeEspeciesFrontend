@@ -7,4 +7,9 @@ type Family = {
     order?: Order
 }
 
+export type CreateFamily = {
+    Name: string
+    OrderId?: number
+}
+
 export default Family
