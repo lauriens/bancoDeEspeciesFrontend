@@ -7,4 +7,9 @@ type Order = {
     class?: Class
 }
 
+export type CreateOrder = {
+    Name: string
+    ClassId?: number
+}
+
 export default Order

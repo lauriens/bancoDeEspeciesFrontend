@@ -5,6 +5,7 @@ import Domain from '../pages/upload/taxonomy/forms/domain/domain'
 import Kingdom from '../pages/upload/taxonomy/forms/kingdom/kingdom'
 import Phylum from '../pages/upload/taxonomy/forms/phylum/phylum'
 import Class from '../pages/upload/taxonomy/forms/class/class'
+import Order from '../pages/upload/taxonomy/forms/order/order'
 
 const routes = [
     {
@@ -33,6 +34,10 @@ const routes = [
             {
                 path: '/classe',
                 Component: Class
+            },
+            {
+                path: '/ordem',
+                Component: Order
             }
         ]
     }

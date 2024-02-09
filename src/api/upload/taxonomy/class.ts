@@ -1,6 +1,6 @@
 import { CreateClass } from "../../../dataModels/taxonomy/class"
-import { CreateTaxonomy } from "../../../dataModels/taxonomy/taxonomy"
-import { basePost } from "../../baseApi"
+import Taxonomy, { CreateTaxonomy } from "../../../dataModels/taxonomy/taxonomy"
+import { baseGet, basePost } from "../../baseApi"
 
 const controller = '/api/class'
 
@@ -13,6 +13,11 @@ async function saveClass(classData: CreateTaxonomy) {
     return await basePost<CreateClass>(controller, data)
 }
 
+async function getClasses() {
+    return await baseGet<Taxonomy[]>(controller)
+}
+
 export {
-    saveClass
+    saveClass,
+    getClasses
 }

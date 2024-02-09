@@ -73,6 +73,17 @@ const routes = [
                                 >
                                     Classe
                                 </NavLink>
+                    },
+                    {
+                        key: 'Ordem',
+                        label: <NavLink
+                                    to="/ordem"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Ordem
+                                </NavLink>
                     }
                 ]
             },
