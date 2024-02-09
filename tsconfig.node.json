@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "composite": true,
+      "skipLibCheck": true,
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "allowSyntheticDefaultImports": true,
+      "lib": [ "ES2015", "ES2015.Promise", "DOM" ]
+    },
+    "include": ["vite.config.ts", "./src"]
+}
