@@ -51,6 +51,17 @@ const routes = [
                                 >
                                     Reino
                                 </NavLink>
+                    },
+                    {
+                        key: 'Filo',
+                        label: <NavLink
+                                    to="/filo"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Filo
+                                </NavLink>
                     }
                 ]
             },

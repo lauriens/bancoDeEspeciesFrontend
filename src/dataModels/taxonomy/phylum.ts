@@ -7,4 +7,9 @@ type Phylum = {
     kingdom?: Kingdom
 }
 
+export type CreatePhylum = {
+    Name: string
+    KingdomId?: number
+}
+
 export default Phylum

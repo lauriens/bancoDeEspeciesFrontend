@@ -3,6 +3,7 @@ import Specie from "../pages/specie/specie"
 import Home from "../pages/home/home"
 import Domain from '../pages/upload/taxonomy/forms/domain/domain'
 import Kingdom from '../pages/upload/taxonomy/forms/kingdom/kingdom'
+import Phylum from '../pages/upload/taxonomy/forms/phylum/phylum'
 
 const routes = [
     {
@@ -23,6 +24,10 @@ const routes = [
             {
                 path: '/reino',
                 Component: Kingdom
+            },
+            {
+                path: '/filo',
+                Component: Phylum
             }
         ]
     }

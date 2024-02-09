@@ -1,4 +1,4 @@
-.kingdom-form {
+.taxonomy-form {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.save-kingdom {
+.save-taxonomy {
     grid-row: 2;
     grid-column: 3;
     margin-left: 1rem;
