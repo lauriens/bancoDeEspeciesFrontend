@@ -1,0 +1,14 @@
+.reference-type-form {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+.input-label {
+    width: 50%;
+}
+
+.reference-type-name {
+    margin-inline: 0.5rem;
+    width: -web-kit-fit-available;
+}

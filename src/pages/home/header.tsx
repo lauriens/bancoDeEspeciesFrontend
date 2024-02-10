@@ -19,11 +19,7 @@ const routes = [
     },
     {
         key: 'Taxonomia',
-        label: (
-        <label>
-            Taxonomia
-        </label>
-        ),
+        label: 'Taxonomia',
         children: [
             {
                 key: 'Inserção',
@@ -136,6 +132,25 @@ const routes = [
             },
             {
 
+            }
+        ]
+    },
+    {
+        key: 'Referencia',
+        label: 'Referência',
+        children: [
+            {
+                key: 'ReferenceType',
+                label: (
+                            <NavLink
+                                to="/referenceType"
+                                className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Tipos de Referência
+                            </NavLink>
+                        )
             }
         ]
     }

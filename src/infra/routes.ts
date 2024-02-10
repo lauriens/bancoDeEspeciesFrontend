@@ -1,22 +1,23 @@
-import Reference from '../pages/reference/reference'
+import Layout from "../pages/home/layout"
+import Domain from '../pages/taxonomy/forms/domain/domain'
+import Kingdom from '../pages/taxonomy/forms/kingdom/kingdom'
+import Phylum from '../pages/taxonomy/forms/phylum/phylum'
+import Class from '../pages/taxonomy/forms/class/class'
+import Order from '../pages/taxonomy/forms/order/order'
+import Family from '../pages/taxonomy/forms/family/family'
+import Genus from '../pages/taxonomy/forms/genus/genus'
+import Specie from '../pages/taxonomy/forms/specie/specie'
+import TaxonomyTree from '../pages/taxonomy/taxonomyTree/taxonomyTree'
 import Home from "../pages/home/home"
-import Domain from '../pages/upload/taxonomy/forms/domain/domain'
-import Kingdom from '../pages/upload/taxonomy/forms/kingdom/kingdom'
-import Phylum from '../pages/upload/taxonomy/forms/phylum/phylum'
-import Class from '../pages/upload/taxonomy/forms/class/class'
-import Order from '../pages/upload/taxonomy/forms/order/order'
-import Family from '../pages/upload/taxonomy/forms/family/family'
-import Genus from '../pages/upload/taxonomy/forms/genus/genus'
-import Specie from '../pages/upload/taxonomy/forms/specie/specie'
-import TaxonomyTree from '../pages/upload/taxonomy/taxonomyTree/taxonomyTree'
+import ReferenceType from "../pages/reference/referenceType/referenceType"
 
 const routes = [
     {
-        element: Home(),
+        element: Layout(),
         children: [
             {
                 path: '/',
-                Component: Reference
+                Component: Home
             },
             {
                 path: '/specie',
@@ -57,6 +58,10 @@ const routes = [
             {
                 path: '/taxonomia',
                 Component: TaxonomyTree
+            },
+            {
+                path: '/referenceType',
+                Component: ReferenceType
             }
         ]
     }
