@@ -5,7 +5,11 @@ import { CreateReferenceType } from '../../../dataModels/reference/referenceType
 import { saveReferenceType } from '../../../api/reference/referenceType'
 import './form.css'
 
-function ReferenceTypeForm() {
+type FormProps = {
+    success: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+function ReferenceTypeForm({ success }: FormProps) {
     const [referenceTypeName, setReferenceTypeName] = useState<string>()
     const [validate, setValidate] = useState(false)
     const [shouldReset, setShouldReset] = useState(false)
@@ -36,6 +40,7 @@ function ReferenceTypeForm() {
         setReferenceTypeName('')
         setValidate(false)
         setShouldReset(false)
+        success(true)
     }
 
     const isValid = (!!referenceTypeName && referenceTypeName !== '')
