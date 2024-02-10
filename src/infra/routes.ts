@@ -8,6 +8,7 @@ import Order from '../pages/upload/taxonomy/forms/order/order'
 import Family from '../pages/upload/taxonomy/forms/family/family'
 import Genus from '../pages/upload/taxonomy/forms/genus/genus'
 import Specie from '../pages/upload/taxonomy/forms/specie/specie'
+import TaxonomyTree from '../pages/upload/taxonomy/taxonomyTree/taxonomyTree'
 
 const routes = [
     {
@@ -52,6 +53,10 @@ const routes = [
             {
                 path: '/especie',
                 Component: Specie
+            },
+            {
+                path: '/taxonomia',
+                Component: TaxonomyTree
             }
         ]
     }

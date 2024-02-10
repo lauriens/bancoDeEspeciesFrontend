@@ -1,6 +1,7 @@
 .entity-name {
     position: fixed;
     top: 0;
+    left: 0;
     padding-inline: 0.5rem;
     font-weight: bold;
     background-color: #69c0ff;

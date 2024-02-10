@@ -5,8 +5,9 @@ import '../../../../../styles/styles.css'
 import SaveButton from '../../../../../components/savingNotification'
 import { saveDomain } from '../../../../../api/upload/taxonomy/domain'
 import { CreateDomain } from '../../../../../dataModels/taxonomy/domain'
+import { StepProps } from '../../taxonomyTree/steps'
 
-function Domain() {
+function Domain({ visible = true }: StepProps) {
     const [domainName, setDomainName] = useState<string>('')
     const [validate, setValidate] = useState(false)
     const [shouldReset, setShouldReset] = useState(false)
@@ -41,7 +42,9 @@ function Domain() {
 
     const isValid = (!!domainName && domainName !== '')
 
-    return ( 
+    if (!visible) return null
+
+    return (
         <div className='domain-form'>
             <label className='entity-name'> Domínio </label>
             <label className='input-label'>
@@ -49,7 +52,7 @@ function Domain() {
                 <Input className='domain-name' value={domainName} onChange={onChange} status={!isValid && validate ? 'error' : ''} />
             </label>
             <SaveButton saveFunction={save} entity='Domínio' success={setShouldReset} />
-        </div>
+        </div> 
     )
 }
 

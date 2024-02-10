@@ -18,18 +18,32 @@ const routes = [
         )
     },
     {
-        key: 'Inserção',
+        key: 'Taxonomia',
         label: (
         <label>
-            Inserção
+            Taxonomia
         </label>
         ),
         children: [
             {
-                key: 'Taxonomia',
-                label: 'Taxonomia',
+                key: 'Inserção',
+                label: 'Inserção',
                 type: 'group',
                 children: [
+                    {
+                        key: 'TaxonomyTree',
+                        label: <NavLink
+                                    to="/taxonomia"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Taxonomia Completa
+                                </NavLink>
+                    },
+                    {
+                        type: 'divider'
+                    },
                     {
                         key: 'Domínio',
                         label: <NavLink
