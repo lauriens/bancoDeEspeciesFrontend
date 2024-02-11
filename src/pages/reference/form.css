@@ -1,0 +1,19 @@
+.reference-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+}
+
+.col1 {
+    grid-column: 1;
+}
+
+.save-reference {
+    grid-row: 4;
+    grid-column: 3;
+    margin-left: 1rem;
+}

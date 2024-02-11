@@ -151,6 +151,19 @@ const routes = [
                                 Tipos de Referência
                             </NavLink>
                         )
+            },
+            {
+                key: 'Reference',
+                label: (
+                            <NavLink
+                                to="/reference"
+                                className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Referência
+                            </NavLink>
+                        )
             }
         ]
     }
