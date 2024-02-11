@@ -1,22 +1,23 @@
-import { Dayjs } from "dayjs"
 import MaterialDestination from "./materialDestination"
+import Reference from "./reference"
 
 type StudyCollectMethod = {
     id: number
     sampleDrawing: string
     samplingEffort: number
-    samplingUnit: string
-    collectStartDate: Dayjs
-    collectEndDate: Dayjs
+    samplingEffortUnit: string
+    collectStartDate: string
+    collectEndDate: string
     materialDestination: MaterialDestination
+    reference: Reference
 }
 
 export type CreateStudyCollectMethod = {
     sampleDrawing: number
     samplingEffort: number
     samplingEffortUnit: string
-    collectStartDate: Dayjs
-    collectEndDate: Dayjs
+    collectStartDate: string
+    collectEndDate: string
     materialDestinationId: number
     referenceId: number
 }

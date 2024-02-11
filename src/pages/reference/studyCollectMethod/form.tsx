@@ -85,8 +85,8 @@ function StudyCollectMethodForm({ success }: FormProps) {
             sampleDrawing,
             samplingEffort,
             samplingEffortUnit,
-            collectStartDate: startDate,
-            collectEndDate: endDate,
+            collectStartDate: startDate.format('YYYY-MM-DD'),
+            collectEndDate: endDate.format('YYYY-MM-DD'),
             materialDestinationId: materialDestination,
             referenceId: reference
         }
