@@ -19,7 +19,7 @@ function ReferencePage() {
     return (
         <div className='reference'>
             <Collapse
-                defaultActiveKey={['1']} items={[{ key: '1', label: 'Criar tipo de referência', children: <ReferenceForm success={setShouldReload} /> }]}
+                defaultActiveKey={['1']} items={[{ key: '1', label: 'Criar Referência', children: <ReferenceForm success={setShouldReload} visible={true} /> }]}
                 />
             <ReferenceTable data={references} />
         </div>

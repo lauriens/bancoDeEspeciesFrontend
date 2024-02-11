@@ -9,14 +9,15 @@ import { saveStudyCollectMethod } from '../../../api/reference/studyCollectMetho
 import { ReferenceList } from '../../../dataModels/reference/reference'
 import { getReferenceList } from '../../../api/reference/reference'
 import './form.css'
+import { StepProps } from '../fullReference/steps'
 
 type FormProps = {
-    success: React.Dispatch<React.SetStateAction<boolean>>
+    success?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const { RangePicker } = DatePicker
 
-function StudyCollectMethodForm({ success }: FormProps) {
+function StudyCollectMethodForm({ success, visible }: FormProps & StepProps) {
     const [materialDestinations, setMaterialDestinations] = useState<MaterialDestinationList[]>()
     const [references, setReferences] = useState<ReferenceList[]>()
     const [sampleDrawing, setSampleDrawing] = useState<number>()
@@ -39,10 +40,13 @@ function StudyCollectMethodForm({ success }: FormProps) {
             if (d.success) setReferences(d.data)
             else message.error('Falha ao buscar lista de referências')
         })
-    }, [])
+    }, [visible])
 
     useEffect(() => {
-        if (shouldReset) reset()
+        if (shouldReset) {
+            reset()
+            if (success) success(true)
+        }
     }, [shouldReset])
 
     const onChangeEffort = (value: number) => {
@@ -105,6 +109,8 @@ function StudyCollectMethodForm({ success }: FormProps) {
         setValidate(false)
         setShouldReset(false)
     }
+
+    if (!visible) return null
 
     return (
         <div className='study-collect-form'>

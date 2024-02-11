@@ -140,6 +140,22 @@ const routes = [
         label: 'Referência',
         children: [
             {
+                key: 'FullReference',
+                label:(
+                    <NavLink
+                        to="/estudo"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Estudo
+                    </NavLink>
+                )
+            },
+            {
+                type: 'divider'
+            },
+            {
                 key: 'Reference',
                 label: (
                             <NavLink

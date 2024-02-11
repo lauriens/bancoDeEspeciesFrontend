@@ -13,6 +13,7 @@ import ReferenceType from "../pages/reference/referenceType/referenceType"
 import Reference from "../pages/reference/reference"
 import StudyCollectMethod from "../pages/reference/studyCollectMethod/studyCollectMethod"
 import MaterialDestination from "../pages/reference/materialDestination/materialDestination"
+import FullReference from "../pages/reference/fullReference/fullReference"
 
 const routes = [
     {
@@ -77,6 +78,10 @@ const routes = [
             {
                 path: '/destinoMaterial',
                 Component: MaterialDestination
+            },
+            {
+                path: '/estudo',
+                Component: FullReference
             }
         ]
     }

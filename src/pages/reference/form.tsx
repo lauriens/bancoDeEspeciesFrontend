@@ -3,15 +3,16 @@ import ReferenceType from '../../dataModels/reference/referenceType'
 import { Input, InputNumber, Select, message } from 'antd'
 import SaveButton from '../../components/savingNotification'
 import { getReferenceTypes } from '../../api/reference/referenceType'
-import Reference, { CreateReference } from '../../dataModels/reference/reference'
+import { CreateReference } from '../../dataModels/reference/reference'
 import { saveReference } from '../../api/reference/reference'
 import './form.css'
+import { StepProps } from './fullReference/steps'
 
 type FormProps = {
-    success: React.Dispatch<React.SetStateAction<boolean>>
+    success?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function ReferenceForm({ success }: FormProps) {
+function ReferenceForm({ success, visible }: FormProps & StepProps) {
     const [referenceTypes, setReferenceTypes] = useState<ReferenceType[]>()
     const [referenceTitle, setReferenceTitle] = useState<string>()
     const [authorName, setAuthorName] = useState<string>()
@@ -21,13 +22,16 @@ function ReferenceForm({ success }: FormProps) {
     const [shouldReset, setShouldReset] = useState(true)
 
     useEffect(() => {
+        getReferenceTypes().then(d => {
+            if (d.success) setReferenceTypes(d.data)
+            else message.error('Falha ao buscar tipos de referência')
+        })
+    }, [visible])
+
+    useEffect(() => {
         if (shouldReset) {
             reset()
-            success(true)
-            getReferenceTypes().then(d => {
-                if (d.success) setReferenceTypes(d.data)
-                else message.error('Falha ao buscar tipos de referência')
-            })
+            if (success) success(true)
         }
     }, [shouldReset])
 
@@ -78,6 +82,8 @@ function ReferenceForm({ success }: FormProps) {
         
         return saveReference(reference) 
     }
+
+    if (!visible) return null
 
     return (
         <div className='reference-form'>
