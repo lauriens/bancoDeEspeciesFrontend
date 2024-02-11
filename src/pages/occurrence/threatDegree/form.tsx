@@ -10,6 +10,7 @@ import { ThreatDegreeSources } from '../../../dataModels/occurrence/threatDegree
 import SaveButton from '../../../components/savingNotification'
 import { saveThreatDegree } from '../../../api/occurrence/threatDegree'
 import Specie from '../../../dataModels/taxonomy/specie'
+import './form.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
@@ -84,7 +85,7 @@ function ThreatDegreeForm({ success }: FormProps) {
             setValidate(true)
             return {
                 success: false,
-                error: 'Preencha ao menos um campo, ou verifique se os dados estão válidos.'
+                error: 'Preencha todos os campos obrigatórios e verifique se os dados estão válidos.'
             }
         }
 
