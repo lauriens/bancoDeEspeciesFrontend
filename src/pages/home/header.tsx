@@ -223,6 +223,19 @@ const routes = [
                     </NavLink>
                 )
             },
+            {
+                key: 'Uf',
+                label:(
+                    <NavLink
+                        to="/uf"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        UF
+                    </NavLink>
+                )
+            },
         ]
     }
 ]

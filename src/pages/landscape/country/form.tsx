@@ -2,12 +2,13 @@ import { Input } from 'antd'
 import React, { useEffect, useState } from 'react'
 import SaveButton from '../../../components/savingNotification'
 import { saveCountry } from '../../../api/landscape/country'
+import './form.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-function CountryForm({ success }) {
+function CountryForm({ success }: FormProps) {
     const [name, setName] = useState<string>()
     const [continentName, setContinentName] = useState<string>()
     const [validate, setValidate] = useState(false)
@@ -18,7 +19,7 @@ function CountryForm({ success }) {
             reset()
             success(true)
         }
-    })
+    }, [shouldReset])
 
     const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.currentTarget.value)
@@ -64,7 +65,7 @@ function CountryForm({ success }) {
                 Continente
             </label>
             <Input value={continentName} onChange={onChangeContinent} />
-            <SaveButton saveFunction={save} entity='País' success={setShouldReset} />
+            <SaveButton className='save-country' saveFunction={save} entity='País' success={setShouldReset} />
         </div>
     )
 }

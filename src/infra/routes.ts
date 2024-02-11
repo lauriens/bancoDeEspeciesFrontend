@@ -15,6 +15,7 @@ import StudyCollectMethod from "../pages/reference/studyCollectMethod/studyColle
 import MaterialDestination from "../pages/reference/materialDestination/materialDestination"
 import FullReference from "../pages/reference/fullReference/fullReference"
 import Country from "../pages/landscape/country/country"
+import Uf from "../pages/landscape/uf/uf"
 
 const routes = [
     {
@@ -87,6 +88,10 @@ const routes = [
             {
                 path: '/pais',
                 Component: Country
+            },
+            {
+                path: '/uf',
+                Component: Uf
             }
         ]
     }
