@@ -140,19 +140,6 @@ const routes = [
         label: 'Referência',
         children: [
             {
-                key: 'ReferenceType',
-                label: (
-                            <NavLink
-                                to="/referenceType"
-                                className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""
-                                }
-                            >
-                                Tipos de Referência
-                            </NavLink>
-                        )
-            },
-            {
                 key: 'Reference',
                 label: (
                             <NavLink
@@ -175,6 +162,32 @@ const routes = [
                                 }
                             >
                                 Métodos de Coleta do Estudo
+                            </NavLink>
+                        )
+            },
+            {
+                key: 'MaterialDestination',
+                label: (
+                            <NavLink
+                                to="/destinoMaterial"
+                                className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Destinos de Material
+                            </NavLink>
+                        )
+            },
+            {
+                key: 'ReferenceType',
+                label: (
+                            <NavLink
+                                to="/referenceType"
+                                className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Tipos de Referência
                             </NavLink>
                         )
             }

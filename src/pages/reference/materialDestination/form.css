@@ -1,4 +1,4 @@
-.reference-form {
+.form-grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 
@@ -10,9 +10,9 @@
     .col1 {
         grid-column: 1;
     }
-    
-    .save-reference {
-        grid-row: 4;
+
+    .save-material {
+        grid-row: 3;
         grid-column: 3;
         margin-left: 1rem;
     }

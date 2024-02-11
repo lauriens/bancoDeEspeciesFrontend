@@ -10,4 +10,10 @@ export type MaterialDestinationList = {
     name: string
 }
 
+export type CreateMaterialDestination = {
+    name: string
+    description?: string
+    gbifId?: string
+}
+
 export default MaterialDestination

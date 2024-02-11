@@ -12,6 +12,7 @@ import Home from "../pages/home/home"
 import ReferenceType from "../pages/reference/referenceType/referenceType"
 import Reference from "../pages/reference/reference"
 import StudyCollectMethod from "../pages/reference/studyCollectMethod/studyCollectMethod"
+import MaterialDestination from "../pages/reference/materialDestination/materialDestination"
 
 const routes = [
     {
@@ -72,6 +73,10 @@ const routes = [
             {
                 path: '/metodoColetaEstudo',
                 Component: StudyCollectMethod
+            },
+            {
+                path: '/destinoMaterial',
+                Component: MaterialDestination
             }
         ]
     }
