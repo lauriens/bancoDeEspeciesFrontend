@@ -207,6 +207,25 @@ const routes = [
         ]
     },
     {
+        key: 'Ocorrencia',
+        label: 'Ocorrência',
+        children: [
+            {
+                key: 'GraudeAmeaca',
+                label:(
+                    <NavLink
+                        to="/ameaca"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Graus de Ameaça
+                    </NavLink>
+                )
+            },
+        ]
+    },
+    {
         key: 'Paisagem',
         label: 'Paisagem',
         children: [

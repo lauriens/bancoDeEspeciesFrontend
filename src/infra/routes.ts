@@ -16,6 +16,7 @@ import MaterialDestination from "../pages/reference/materialDestination/material
 import FullReference from "../pages/reference/fullReference/fullReference"
 import Country from "../pages/landscape/country/country"
 import Uf from "../pages/landscape/uf/uf"
+import ThreatDegree from "../pages/occurrence/threatDegree/threatDegree"
 
 const routes = [
     {
@@ -92,6 +93,10 @@ const routes = [
             {
                 path: '/uf',
                 Component: Uf
+            },
+            {
+                path: '/ameaca',
+                Component: ThreatDegree
             }
         ]
     }
