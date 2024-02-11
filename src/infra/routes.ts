@@ -14,6 +14,7 @@ import Reference from "../pages/reference/reference"
 import StudyCollectMethod from "../pages/reference/studyCollectMethod/studyCollectMethod"
 import MaterialDestination from "../pages/reference/materialDestination/materialDestination"
 import FullReference from "../pages/reference/fullReference/fullReference"
+import Country from "../pages/landscape/country/country"
 
 const routes = [
     {
@@ -82,6 +83,10 @@ const routes = [
             {
                 path: '/estudo',
                 Component: FullReference
+            },
+            {
+                path: '/pais',
+                Component: Country
             }
         ]
     }
