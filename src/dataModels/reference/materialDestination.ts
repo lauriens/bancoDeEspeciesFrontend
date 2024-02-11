@@ -5,4 +5,9 @@ type MaterialDestination = {
     gbifId: string
 }
 
+export type MaterialDestinationList = {
+    id: number
+    name: string
+}
+
 export default MaterialDestination

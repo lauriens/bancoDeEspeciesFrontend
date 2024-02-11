@@ -164,6 +164,19 @@ const routes = [
                                 Referência
                             </NavLink>
                         )
+            },
+            {
+                key: 'StudyMethodCollect',
+                label: (
+                            <NavLink
+                                to="/metodoColetaEstudo"
+                                className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "active" : ""
+                                }
+                            >
+                                Métodos de Coleta do Estudo
+                            </NavLink>
+                        )
             }
         ]
     }

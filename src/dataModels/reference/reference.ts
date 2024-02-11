@@ -10,6 +10,11 @@ type Reference = {
     studyCollectMethods?: StudyCollectMethod[]
 }
 
+export type ReferenceList = {
+    id: number
+    title: string
+}
+
 export type CreateReference = {
     title: string
     authorName: string

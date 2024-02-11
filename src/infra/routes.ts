@@ -11,6 +11,7 @@ import TaxonomyTree from '../pages/taxonomy/taxonomyTree/taxonomyTree'
 import Home from "../pages/home/home"
 import ReferenceType from "../pages/reference/referenceType/referenceType"
 import Reference from "../pages/reference/reference"
+import StudyCollectMethod from "../pages/reference/studyCollectMethod/studyCollectMethod"
 
 const routes = [
     {
@@ -67,6 +68,10 @@ const routes = [
             {
                 path: '/reference',
                 Component: Reference
+            },
+            {
+                path: '/metodoColetaEstudo',
+                Component: StudyCollectMethod
             }
         ]
     }
