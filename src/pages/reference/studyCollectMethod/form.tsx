@@ -63,7 +63,7 @@ function StudyCollectMethodForm({ success }: FormProps) {
     }
  
     const isValid = {
-        all: !!reference && ((!!sampleDrawing || sampleDrawing === 0) || 
+        all: (!!reference && ((!!sampleDrawing || sampleDrawing === 0)) || 
             (!!samplingEffort && (!!samplingEffortUnit && samplingEffortUnit !== '')) ||
             (!!startDate && !!endDate) ||
             !!materialDestination),
@@ -73,7 +73,7 @@ function StudyCollectMethodForm({ success }: FormProps) {
     }
 
     const save = async () => {
-        if (!isValid) {
+        if (!isValid.all) {
             setValidate(true)
             return {
                 success: false,
@@ -95,12 +95,14 @@ function StudyCollectMethodForm({ success }: FormProps) {
     }
 
     const reset = () => {
+        setReference(undefined)
         setSampleDrawing(undefined)
         setSamplingEffort(undefined)
         setSamplingEffortUnit(undefined)
         setStartDate(undefined)
         setEndDate(undefined)
         setMaterialDestination(undefined)
+        setValidate(false)
         setShouldReset(false)
     }
 
@@ -152,7 +154,7 @@ function StudyCollectMethodForm({ success }: FormProps) {
                 options={materialDestinations?.map(d => { return { value: d.id, label: d.name }})} 
                 onChange={setMaterialDestination}
             />
-            <SaveButton className='save-study-method' saveFunction={save} entity='Referência' success={setShouldReset} />
+            <SaveButton className='save-study-method' saveFunction={save} entity='Método de Coleta do Estudo' success={setShouldReset} />
         </div>
     )
 }
