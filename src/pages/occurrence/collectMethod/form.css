@@ -1,6 +1,6 @@
 .form-grid {
-    .save-reference {
-        grid-row: 4;
+    .save-collect-method {
+        grid-row: 3;
         grid-column: 3;
         margin-left: 1rem;
     }

@@ -6,7 +6,7 @@ type ThreatDegree = {
     id: number
     classification: string
     resolutionDate: string
-    source: number
+    source: string
     specie: Specie
     uf?: Uf
     country?: Country

@@ -17,6 +17,7 @@ import FullReference from "../pages/reference/fullReference/fullReference"
 import Country from "../pages/landscape/country/country"
 import Uf from "../pages/landscape/uf/uf"
 import ThreatDegree from "../pages/occurrence/threatDegree/threatDegree"
+import CollectMethod from "../pages/occurrence/collectMethod/collectMethod"
 
 const routes = [
     {
@@ -97,6 +98,10 @@ const routes = [
             {
                 path: '/ameaca',
                 Component: ThreatDegree
+            },
+            {
+                path: '/metodoColetaOcorrencia',
+                Component: CollectMethod
             }
         ]
     }

@@ -174,7 +174,7 @@ const routes = [
                                 isPending ? "pending" : isActive ? "active" : ""
                                 }
                             >
-                                Métodos de Coleta do Estudo
+                                Métodos de Coleta (Estudo)
                             </NavLink>
                         )
             },
@@ -220,6 +220,19 @@ const routes = [
                         }
                     >
                         Graus de Ameaça
+                    </NavLink>
+                )
+            },
+            {
+                key: 'MetodoColeta',
+                label:(
+                    <NavLink
+                        to="/metodoColetaOcorrencia"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Método de Coleta (Ocorrência)
                     </NavLink>
                 )
             },
