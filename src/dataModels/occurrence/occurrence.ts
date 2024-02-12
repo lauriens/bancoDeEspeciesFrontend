@@ -19,7 +19,7 @@ type Occurrence = {
     isDuplicate?: boolean
     reviewerObservation?: string
     threatDegree?: ThreatDegree
-    occurrenceMethod?: CollectMethod
+    occurrenceColetaMethod?: CollectMethod
 }
 
 export type CreateOccurrence = {

@@ -43,12 +43,19 @@ function OccurrenceTable( { data }: TableProps) {
         {
             title: 'Método de Coleta',
             key: 'occurrenceMethod',
-            render: (_, record: Occurrence) => <p>{record.occurrenceMethod?.name || ''}</p>
+            render: (_, record: Occurrence) => <p>{record.occurrenceColetaMethod?.name || ''}</p>
         }
     ]
 
     return (
-        <Table dataSource={data?.map(d => { return { ...d, key: d.id }})} columns={columns} />
+        <Table 
+            dataSource={data?.map(d => { return { ...d, key: d.id }})} 
+            columns={columns} 
+            expandable={{
+                expandedRowRender: (record: Occurrence) => <p style={{ margin: 0 }}>{`${record.locality?.name || ''}: ${record.locality?.latitude || ''}, ${record.locality?.longitude || ''}`}</p>,
+                rowExpandable: (record: Occurrence) => !!record.locality?.name,
+              }}
+        />
     )
 }
 
