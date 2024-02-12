@@ -18,6 +18,7 @@ import Country from "../pages/landscape/country/country"
 import Uf from "../pages/landscape/uf/uf"
 import ThreatDegree from "../pages/occurrence/threatDegree/threatDegree"
 import CollectMethod from "../pages/occurrence/collectMethod/collectMethod"
+import SampleAreaType from "../pages/landscape/sampleAreaType/sampleAreaType"
 
 const routes = [
     {
@@ -102,6 +103,10 @@ const routes = [
             {
                 path: '/metodoColetaOcorrencia',
                 Component: CollectMethod
+            },
+            {
+                path: '/tipoAreaAmostra',
+                Component: SampleAreaType
             }
         ]
     }

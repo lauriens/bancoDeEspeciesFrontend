@@ -174,7 +174,7 @@ const routes = [
                                 isPending ? "pending" : isActive ? "active" : ""
                                 }
                             >
-                                Métodos de Coleta (Estudo)
+                                Métodos de Coleta do Estudo
                             </NavLink>
                         )
             },
@@ -232,7 +232,7 @@ const routes = [
                         isPending ? "pending" : isActive ? "active" : ""
                         }
                     >
-                        Método de Coleta (Ocorrência)
+                        Métodos de Coleta de Ocorrência
                     </NavLink>
                 )
             },
@@ -268,6 +268,19 @@ const routes = [
                     </NavLink>
                 )
             },
+            {
+                key: 'SampleAreaType',
+                label:(
+                    <NavLink
+                        to="/TipoAreaAmostra"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Tipos de Área Amostrada
+                    </NavLink>
+                )
+            }
         ]
     }
 ]
