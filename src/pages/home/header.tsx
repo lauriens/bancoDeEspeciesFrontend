@@ -370,6 +370,19 @@ const routes = [
                         Tipos de Área Amostrada
                     </NavLink>
                 )
+            },
+            {
+                key: 'AreaType',
+                label:(
+                    <NavLink
+                        to="/tipoArea"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Tipos de Área
+                    </NavLink>
+                )
             }
         ]
     },

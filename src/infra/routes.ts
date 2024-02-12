@@ -27,6 +27,7 @@ import Biome from "../pages/landscape/biome/biome"
 import Landscape from "../pages/landscape/landscape/landscape"
 import Agroecosystem from "../pages/landscape/agroecosystem/agroecosystem"
 import Municipality from "../pages/landscape/municipality/municipality"
+import AreaType from "../pages/landscape/areaType/areaType"
 
 const routes = [
     {
@@ -147,6 +148,10 @@ const routes = [
             {
                 path: '/municipio',
                 Component: Municipality
+            },
+            {
+                path: '/tipoArea',
+                Component: AreaType  
             }
         ]
     }

@@ -6,7 +6,7 @@
       "module": "ESNext",
       "moduleResolution": "bundler",
       "allowSyntheticDefaultImports": true,
-      "lib": [ "ES2015", "ES2015.Promise", "DOM" ]
+      "lib": [ "ES2015", "ES2015.Promise", "DOM", "ES7" ]
     },
     "include": ["vite.config.ts", "./src"]
 }

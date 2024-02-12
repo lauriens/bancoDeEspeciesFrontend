@@ -5,9 +5,12 @@ import { axiosInstance } from "../infra/apiConfig";
 
 async function basePost<T>(url: string, data: T): Promise<SaveResponse> {
     try {
-        const response = await axiosInstance.post<void, AxiosResponse<void>, T>(url, data)
+        const response = await axiosInstance.post<void | number, AxiosResponse<void | number>, T>(url, data)
         
-        if (response.status == 201) return { success: true }
+        if ([200, 201].includes(response.status)) return { 
+            success: true,
+            id: response.data || undefined
+        }
 
         return {
             success: false,
