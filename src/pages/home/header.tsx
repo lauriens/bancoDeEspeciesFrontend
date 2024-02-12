@@ -269,6 +269,19 @@ const routes = [
                 )
             },
             {
+                key: 'Localidade',
+                label:(
+                    <NavLink
+                        to="/localidade"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Localidades
+                    </NavLink>
+                )
+            },
+            {
                 key: 'SampleAreaType',
                 label:(
                     <NavLink

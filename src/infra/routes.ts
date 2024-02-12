@@ -19,6 +19,7 @@ import Uf from "../pages/landscape/uf/uf"
 import ThreatDegree from "../pages/occurrence/threatDegree/threatDegree"
 import CollectMethod from "../pages/occurrence/collectMethod/collectMethod"
 import SampleAreaType from "../pages/landscape/sampleAreaType/sampleAreaType"
+import Locality from "../pages/landscape/locality/locality"
 
 const routes = [
     {
@@ -107,6 +108,10 @@ const routes = [
             {
                 path: '/tipoAreaAmostra',
                 Component: SampleAreaType
+            },
+            {
+                path: '/localidade',
+                Component: Locality
             }
         ]
     }
