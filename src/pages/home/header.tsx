@@ -295,6 +295,19 @@ const routes = [
                 )
             },
             {
+                key: 'Municipio',
+                label:(
+                    <NavLink
+                        to="/municipio"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Município
+                    </NavLink>
+                )
+            },
+            {
                 key: 'Localidade',
                 label:(
                     <NavLink

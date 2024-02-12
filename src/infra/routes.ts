@@ -26,6 +26,7 @@ import Anthrome from "../pages/landscape/anthrome/anthrome"
 import Biome from "../pages/landscape/biome/biome"
 import Landscape from "../pages/landscape/landscape/landscape"
 import Agroecosystem from "../pages/landscape/agroecosystem/agroecosystem"
+import Municipality from "../pages/landscape/municipality/municipality"
 
 const routes = [
     {
@@ -142,6 +143,10 @@ const routes = [
             {
                 path: '/agroecossistema',
                 Component: Agroecosystem
+            },
+            {
+                path: '/municipio',
+                Component: Municipality
             }
         ]
     }
