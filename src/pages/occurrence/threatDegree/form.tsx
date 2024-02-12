@@ -68,14 +68,14 @@ function ThreatDegreeForm({ success }: FormProps) {
     const isValid = {
         classification: (!!classification && classification !== ''),
         date: !!resolutionDate,
-        source: !!source,
+        source: (!!source || source === 0),
         country: (!!country || !!uf || !!specie),
         uf: (!!country || !!uf || !!specie),
         specie: (!!country || !!uf || !!specie),
         all: (
             (!!classification && classification !== '') &&
             !!resolutionDate &&
-            !!source &&
+            (!!source || source === 0) &&
             (!!country || !!uf || !!specie)
         )
     }
