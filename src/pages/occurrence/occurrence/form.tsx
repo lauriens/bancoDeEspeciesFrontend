@@ -17,6 +17,7 @@ import { OccurrenceTypes } from '../../../dataModels/occurrence/occurrence'
 import SaveButton from '../../../components/savingNotification'
 import { saveOccurrence } from '../../../api/occurrence/occurrence'
 import './form.css'
+import { formatForSavingDate, formatForSavingTime } from '../../../infra/formatData'
 
 const { RangePicker, TimePicker } = DatePicker
 const { TextArea } = Input
@@ -118,10 +119,10 @@ function OccurrenceForm({ success }: FormProps) {
         }
 
         const occurrence = {
-            startDate: startDate?.format('YYYY-MM-DD'),
-            endDate: startDate?.format('YYYY-MM-DD'),
+            startDate: formatForSavingDate(startDate),
+            endDate: formatForSavingDate(startDate),
             occurrenceType: type,
-            occurrenceTime: time?.format('YYYY-MM-DDTHH:ss'),
+            occurrenceTime: formatForSavingTime(time),
             isSnucOccurrence: isSnuc,
             isDuplicate: duplicate,
             reviewerObservation: review,
@@ -157,9 +158,9 @@ function OccurrenceForm({ success }: FormProps) {
     const isValid = {
         specie: !!specie,
         user: !!user,
-        type: !!type,
+        type: (!!type || type === 0),
         dateRange: ((!!startDate || !!endDate) ? !!startDate && !!endDate : true),
-        all: (!!specie && !!user && !!type) && ((!!startDate || !!endDate) ? !!startDate && !!endDate : true)
+        all: (!!specie && !!user && (!!type || type === 0)) && ((!!startDate || !!endDate) ? !!startDate && !!endDate : true)
     }
 
     return (

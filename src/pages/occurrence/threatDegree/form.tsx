@@ -11,6 +11,7 @@ import SaveButton from '../../../components/savingNotification'
 import { saveThreatDegree } from '../../../api/occurrence/threatDegree'
 import Specie from '../../../dataModels/taxonomy/specie'
 import './form.css'
+import { formatForSavingDate } from '../../../infra/formatData'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
@@ -91,7 +92,7 @@ function ThreatDegreeForm({ success }: FormProps) {
 
         const threatDegree = {
             classification,
-            resolutionDate: resolutionDate.format('YYYY-MM-DD'),
+            resolutionDate: formatForSavingDate(resolutionDate),
             source,
             specieId: specie,
             ufId: uf,

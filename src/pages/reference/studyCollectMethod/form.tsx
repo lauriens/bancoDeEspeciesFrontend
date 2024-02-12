@@ -10,6 +10,7 @@ import { ReferenceList } from '../../../dataModels/reference/reference'
 import { getReferenceList } from '../../../api/reference/reference'
 import './form.css'
 import { StepProps } from '../fullReference/steps'
+import { formatForSavingDate } from '../../../infra/formatData'
 
 type FormProps = {
     success?: React.Dispatch<React.SetStateAction<boolean>>
@@ -89,8 +90,8 @@ function StudyCollectMethodForm({ success, visible }: FormProps & StepProps) {
             sampleDrawing,
             samplingEffort,
             samplingEffortUnit,
-            collectStartDate: startDate.format('YYYY-MM-DD'),
-            collectEndDate: endDate.format('YYYY-MM-DD'),
+            collectStartDate: formatForSavingDate(startDate),
+            collectEndDate: formatForSavingDate(endDate),
             materialDestinationId: materialDestination,
             referenceId: reference
         }
