@@ -20,6 +20,8 @@ import ThreatDegree from "../pages/occurrence/threatDegree/threatDegree"
 import CollectMethod from "../pages/occurrence/collectMethod/collectMethod"
 import SampleAreaType from "../pages/landscape/sampleAreaType/sampleAreaType"
 import Locality from "../pages/landscape/locality/locality"
+import Occurrence from "../pages/occurrence/occurrence/occurrence"
+import User from "../pages/home/user/user"
 
 const routes = [
     {
@@ -112,6 +114,14 @@ const routes = [
             {
                 path: '/localidade',
                 Component: Locality
+            },
+            {
+                path: '/ocorrencia',
+                Component: Occurrence
+            },
+            {
+                path: '/user',
+                Component: User
             }
         ]
     }

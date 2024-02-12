@@ -1,6 +1,6 @@
 .form-grid {
-    .save-threat-degree {
-        grid-row: 6;
+    .save-occurrence {
+        grid-row: 12;
         grid-column: 3;
         margin-left: 1rem;
     }

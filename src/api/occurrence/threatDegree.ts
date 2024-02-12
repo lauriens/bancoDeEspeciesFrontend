@@ -11,7 +11,12 @@ async function getThreatDegrees() {
     return await baseGet<ThreatDegree[]>(controller)
 }
 
+async function getSpecieThreatDegrees(specieId: number) {
+    return await baseGet<ThreatDegree[]>(`${controller}/specie/${specieId}`)
+}
+
 export {
     saveThreatDegree,
-    getThreatDegrees
+    getThreatDegrees,
+    getSpecieThreatDegrees
 }

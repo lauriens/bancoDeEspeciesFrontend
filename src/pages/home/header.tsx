@@ -211,6 +211,19 @@ const routes = [
         label: 'Ocorrência',
         children: [
             {
+                key: 'Occurrence',
+                label:(
+                    <NavLink
+                        to="/ocorrencia"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Ocorrência
+                    </NavLink>
+                )
+            },
+            {
                 key: 'GraudeAmeaca',
                 label:(
                     <NavLink
@@ -295,6 +308,19 @@ const routes = [
                 )
             }
         ]
+    },
+    {
+        key: 'User',
+        label: (
+            <NavLink
+                to='/user'
+                className={({ isActive, isPending }) => 
+                    isPending ? 'pending' : isActive ? 'active' : ''
+                }
+            >
+                Usuários
+            </NavLink>
+        )
     }
 ]
 

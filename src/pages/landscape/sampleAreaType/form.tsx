@@ -65,7 +65,7 @@ function SampleAreaTypeForm({ success }: FormProps) {
             <label className='input-label col1'>
                 É Snuc?
             </label>
-            <Checkbox value={isSnuc} onChange={onChangeIsSnuc} />
+            <Checkbox checked={isSnuc} onChange={onChangeIsSnuc} />
             <SaveButton className='save-sample-area' saveFunction={save} entity='Tipo de Área Amostrada' success={setShouldReset} />
         </div>
     )
