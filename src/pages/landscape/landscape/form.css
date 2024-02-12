@@ -1,0 +1,22 @@
+.landscape-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+
+    .input-label {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding-right: 0.5rem;
+    }
+    
+    .col1 {
+        grid-column: 1;
+    }
+
+    .save-landscape {
+        grid-row: 12;
+        grid-column: 3;
+        margin-left: 1rem;
+    }
+}

@@ -256,6 +256,19 @@ const routes = [
         label: 'Paisagem',
         children: [
             {
+                key: 'Landscape',
+                label:(
+                    <NavLink
+                        to="/paisagem"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Paisagem
+                    </NavLink>
+                )
+            },
+            {
                 key: 'Pais',
                 label:(
                     <NavLink
@@ -316,6 +329,19 @@ const routes = [
                         }
                     >
                         Bioma
+                    </NavLink>
+                )
+            },
+            {
+                key: 'Agroecosystem',
+                label:(
+                    <NavLink
+                        to="/agroecossistema"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Tipos de Agroecossistema
                     </NavLink>
                 )
             },

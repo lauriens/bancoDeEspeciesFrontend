@@ -24,6 +24,8 @@ import Occurrence from "../pages/occurrence/occurrence/occurrence"
 import User from "../pages/home/user/user"
 import Anthrome from "../pages/landscape/anthrome/anthrome"
 import Biome from "../pages/landscape/biome/biome"
+import Landscape from "../pages/landscape/landscape/landscape"
+import Agroecosystem from "../pages/landscape/agroecosystem/agroecosystem"
 
 const routes = [
     {
@@ -132,6 +134,14 @@ const routes = [
             {
                 path: '/bioma',
                 Component: Biome
+            },
+            {
+                path: '/paisagem',
+                Component: Landscape
+            },
+            {
+                path: '/agroecossistema',
+                Component: Agroecosystem
             }
         ]
     }

@@ -3,6 +3,7 @@ import SampleAreaType from '../../../dataModels/landscape/sampleAreaType'
 import { Collapse, List, message } from 'antd'
 import SampleAreaTypeForm from './form'
 import { getSampleAreaTypes } from '../../../api/landscape/sampleAreaType'
+import './sampleAreaType.css'
 
 function SampleAreaTypePage() {
     const [shouldReload, setShouldReload] = useState(true)

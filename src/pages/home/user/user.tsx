@@ -3,6 +3,7 @@ import User from '../../../dataModels/user'
 import { getUsers } from '../../../api/user/user'
 import { Collapse, List, message } from 'antd'
 import UserForm from './form'
+import './user.css'
 
 function UserPage() {
     const [shouldReload, setShouldReload] = useState(true)

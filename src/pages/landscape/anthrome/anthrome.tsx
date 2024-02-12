@@ -3,6 +3,7 @@ import Anthrome from '../../../dataModels/landscape/anthrome'
 import { Collapse, List, message } from 'antd'
 import AnthromeForm from './form'
 import { getAnthromes } from '../../../api/landscape/anthrome'
+import './anthrome.css'
 
 function AnthromePage() {
     const [shouldReload, setShouldReload] = useState(true)

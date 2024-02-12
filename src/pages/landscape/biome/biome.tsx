@@ -3,6 +3,7 @@ import Biome from '../../../dataModels/landscape/biome'
 import { Collapse, List, message } from 'antd'
 import BiomeForm from './form'
 import { getBiomes } from '../../../api/landscape/biome'
+import './biome.css'
 
 function BiomePage() {
     const [shouldReload, setShouldReload] = useState(true)
