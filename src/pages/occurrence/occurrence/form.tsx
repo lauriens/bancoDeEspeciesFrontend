@@ -163,7 +163,7 @@ function OccurrenceForm({ success }: FormProps) {
     }
 
     return (
-        <div className='form-grid'>
+        <div className='occurrence-form-grid'>
             <label className='input-label col1'>
                 Espécie
             </label>
