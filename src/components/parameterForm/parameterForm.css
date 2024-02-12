@@ -1,0 +1,7 @@
+.form-grid {
+    .save-parameter {
+        grid-row: 1;
+        grid-column: 3;
+        margin-left: 1rem;
+    }
+}

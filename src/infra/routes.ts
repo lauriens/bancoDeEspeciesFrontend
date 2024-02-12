@@ -22,6 +22,8 @@ import SampleAreaType from "../pages/landscape/sampleAreaType/sampleAreaType"
 import Locality from "../pages/landscape/locality/locality"
 import Occurrence from "../pages/occurrence/occurrence/occurrence"
 import User from "../pages/home/user/user"
+import Anthrome from "../pages/landscape/anthrome/anthrome"
+import Biome from "../pages/landscape/biome/biome"
 
 const routes = [
     {
@@ -122,6 +124,14 @@ const routes = [
             {
                 path: '/user',
                 Component: User
+            },
+            {
+                path: '/antroma',
+                Component: Anthrome
+            },
+            {
+                path: '/bioma',
+                Component: Biome
             }
         ]
     }

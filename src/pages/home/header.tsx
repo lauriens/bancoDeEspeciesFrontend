@@ -295,6 +295,31 @@ const routes = [
                 )
             },
             {
+                key: 'Antroma',
+                label:(
+                    <NavLink
+                        to="/antroma"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Antroma
+                    </NavLink>
+                )
+            },{
+                key: 'Bioma',
+                label:(
+                    <NavLink
+                        to="/bioma"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Bioma
+                    </NavLink>
+                )
+            },
+            {
                 key: 'SampleAreaType',
                 label:(
                     <NavLink

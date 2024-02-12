@@ -1,0 +1,3 @@
+type CreateGenericParameter = {
+    name: string
+}
