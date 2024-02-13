@@ -1,4 +1,5 @@
 import LandscapePage from "../../landscape/landscape/landscape"
+import AbundancePage from "../../occurrence/abundance/abundance"
 import OccurrencePage from "../../occurrence/occurrence/occurrence"
 import CulturePage from "../culture/culture"
 import OccurrenceCulturePage from "../occurrenceCulture/occurrenceCulture"
@@ -24,6 +25,10 @@ const steps = [
     {
         key: 'OccurrenceCulture',
         title: 'Cultura - Ocorrência'
+    },
+    {
+        key: 'Abundances',
+        title: 'Abundâncias'
     }
 ]
 
@@ -47,6 +52,10 @@ export const stepContents = [
     {
         key: 'OccurrenceCulture',
         content: OccurrenceCulturePage
+    },
+    {
+        key: 'Abundances',
+        content: AbundancePage
     }
 ]
 

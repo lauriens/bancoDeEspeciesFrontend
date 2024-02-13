@@ -260,6 +260,19 @@ const routes = [
                     </NavLink>
                 )
             },
+            {
+                key: 'Abundancia',
+                label:(
+                    <NavLink
+                        to="/abundancia"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Abundância
+                    </NavLink>
+                )
+            }
         ]
     },
     {

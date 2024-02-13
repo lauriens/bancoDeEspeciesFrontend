@@ -27,7 +27,7 @@ function OccurrenceCulturePage({ visible = true, cultureId, setCultureId, occurr
             <Collapse
                 defaultActiveKey={['1']} 
                 items={[
-                    { key: '1', label: 'Criar Ocorrência - Cultura', children: 
+                    { key: '1', label: 'Criar Cultura - Ocorrência', children: 
                         <OccurrenceCultureForm 
                             success={setShouldReload} 
                             cultureId={cultureId}
