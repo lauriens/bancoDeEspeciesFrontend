@@ -7,7 +7,7 @@ import SaveButton from '../../../components/savingNotification'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
-    setLocalityId: React.Dispatch<React.SetStateAction<number>>
+    setLocalityId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function LocalityForm({ success, setLocalityId }: FormProps) {
@@ -37,12 +37,12 @@ function LocalityForm({ success, setLocalityId }: FormProps) {
         setName(e.currentTarget.value)
     }
 
-    const onChangeLatitude = (value: number) => {
-        setLatitude(value)
+    const onChangeLatitude = (value: number | null) => {
+        setLatitude(value || undefined)
     }
 
-    const onChangeLongitude = (value: number) => {
-        setLongitude(value)
+    const onChangeLongitude = (value: number | null) => {
+        setLongitude(value || undefined)
     }
 
     const save = async () => {
@@ -55,10 +55,10 @@ function LocalityForm({ success, setLocalityId }: FormProps) {
         }
 
         const locality = {
-            name, 
-            latitude,
-            longitude,
-            sampleAreaTypeId: sampleAreaType
+            name: name!, 
+            latitude: latitude!,
+            longitude: longitude!,
+            sampleAreaTypeId: sampleAreaType!
         }
 
         return await saveLocality(locality).then(r => {

@@ -5,7 +5,7 @@ import { saveLandscapeStatistic } from '../../../api/landscape/landscapeStatisti
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
-    landscapeId: number
+    landscapeId?: number
 }
 
 function LandscapeStatisticForm({ success, landscapeId }: FormProps) {
@@ -45,9 +45,9 @@ function LandscapeStatisticForm({ success, landscapeId }: FormProps) {
         }
 
         const landscapeStatistic = {
-            name, 
-            value,
-            landscapeId
+            name: name!, 
+            value: value!,
+            landscapeId: landscapeId!
         }
 
         return await saveLandscapeStatistic(landscapeStatistic)

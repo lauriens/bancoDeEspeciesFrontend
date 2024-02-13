@@ -14,12 +14,12 @@ function OccurrenceTable( { data, occurrenceId, setOccurrenceId }: TableProps) {
         {
             title: 'Espécie',
             key: 'specie',
-            render: (_, record: Occurrence) => <p>{`${record?.specie?.genus?.name || ''} ${record?.specie?.name || ''}`}</p>
+            render: (_: string, record: Occurrence) => <p>{`${record?.specie?.genus?.name || ''} ${record?.specie?.name || ''}`}</p>
         },
         {
             title: 'Período de Coleta',
             key: 'dateRange',
-            render: (_, record: Occurrence) => <p>{record.startDate ? `${formatDate(record.startDate)} - ${formatDate(record.endDate)}` : ''}</p>
+            render: (_: string, record: Occurrence) => <p>{record.startDate ? `${formatDate(record.startDate)} - ${formatDate(record.endDate)}` : ''}</p>
         },
         {
             title: 'Horário da Coleta',
@@ -40,12 +40,12 @@ function OccurrenceTable( { data, occurrenceId, setOccurrenceId }: TableProps) {
         {
             title: 'Grau de Ameaça',
             key: 'threatDegree',
-            render: (_, record: Occurrence) => <p>{record.threatDegree?.classification || ''}</p>
+            render: (_: string, record: Occurrence) => <p>{record.threatDegree?.classification || ''}</p>
         },
         {
             title: 'Método de Coleta',
             key: 'occurrenceMethod',
-            render: (_, record: Occurrence) => <p>{record.occurrenceColetaMethod?.name || ''}</p>
+            render: (_: string, record: Occurrence) => <p>{record.occurrenceColetaMethod?.name || ''}</p>
         }
     ]
 

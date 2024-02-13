@@ -12,7 +12,7 @@ import { getCultureSpecies } from '../../../api/taxonomy/cultureSpecie'
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
     landscapeId?: number
-    setCultureId?: React.Dispatch<React.SetStateAction<number>>
+    setCultureId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function CultureForm({ success, landscapeId, setCultureId }: FormProps) {

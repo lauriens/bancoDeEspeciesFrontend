@@ -41,8 +41,8 @@ function LandscapeMunicipality({ visible, landscapeId }: StepProps) {
         }
 
         const municipalityLandscape = {
-            landscapeId,
-            municipalityId: municipality
+            landscapeId: landscapeId!,
+            municipalityId: municipality!
         }
 
         return await saveLandscapeMunicipality(municipalityLandscape)

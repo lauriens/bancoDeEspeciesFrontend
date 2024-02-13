@@ -4,9 +4,9 @@ import { Table } from 'antd'
 import '../../../styles/styles.css'
 
 type TableProps = {
-    data: Landscape[]
+    data?: Landscape[]
     landscapeId?: number
-    setLandscapeId?: React.Dispatch<React.SetStateAction<number>>
+    setLandscapeId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function LandscapeTable({ data, landscapeId, setLandscapeId }: TableProps) {

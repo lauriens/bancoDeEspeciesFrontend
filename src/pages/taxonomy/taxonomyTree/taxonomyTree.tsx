@@ -1,4 +1,4 @@
-import { Button, Steps, message } from 'antd'
+import { Button, Steps } from 'antd'
 import React, { useState } from 'react'
 import './taxonomyTree.css'
 import { stepContents, steps } from './steps'

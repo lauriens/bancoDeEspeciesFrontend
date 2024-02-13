@@ -105,6 +105,6 @@ export const stepContents = [
 ]
 
 export type StepProps = {
-    visible: boolean
-    pickStep: (key: string) => void
+    visible?: boolean
+    pickStep?: (key: string) => void
 }

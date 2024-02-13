@@ -18,6 +18,7 @@ import SaveButton from '../../../components/savingNotification'
 import { saveOccurrence } from '../../../api/occurrence/occurrence'
 import './form.css'
 import { formatForSavingDate, formatForSavingTime } from '../../../infra/formatData'
+import { RangeValue } from 'rc-picker/lib/interface'
 
 const { RangePicker, TimePicker } = DatePicker
 const { TextArea } = Input
@@ -34,9 +35,9 @@ function OccurrenceForm({ success, setOccurrenceId }: FormProps) {
     const [references, setReferences] = useState<ReferenceList[]>()
     const [localities, setLocalities] = useState<Locality[]>()
     const [users, setUsers] = useState<User[]>()
-    const [startDate, setStartDate] = useState<Dayjs>()
-    const [endDate, setEndDate] = useState<Dayjs>()
-    const [time, setTime] = useState<Dayjs>()
+    const [startDate, setStartDate] = useState<Dayjs | null>(null)
+    const [endDate, setEndDate] = useState<Dayjs | null>(null)
+    const [time, setTime] = useState<Dayjs | null>(null)
     const [type, setType] = useState<number>()
     const [isSnuc, setIsSnuc] = useState<boolean>(false)
     const [duplicate, setDuplicate] = useState<boolean>()
@@ -89,12 +90,14 @@ function OccurrenceForm({ success, setOccurrenceId }: FormProps) {
         }
     }, [shouldReset])
 
-    const onChangeRange = ([start, end]: Dayjs[]) => {
-        setStartDate(start)
-        setEndDate(end)
+    const onChangeRange = (values: RangeValue<Dayjs>) => {
+        if (values) {
+            setStartDate(values[0])
+            setEndDate(values[1])
+        }
     }
 
-    const onChangeTime = (newTime: Dayjs) => {
+    const onChangeTime = (newTime: Dayjs | null) => {
         setTime(newTime)
     }
 
@@ -122,17 +125,17 @@ function OccurrenceForm({ success, setOccurrenceId }: FormProps) {
         const occurrence = {
             startDate: formatForSavingDate(startDate),
             endDate: formatForSavingDate(startDate),
-            occurrenceType: type,
+            occurrenceType: type!,
             occurrenceTime: formatForSavingTime(time),
             isSnucOccurrence: isSnuc,
             isDuplicate: duplicate,
             reviewerObservation: review,
             threatDegreeId: threatDegree,
             occurrenceMethodId: method,
-            specieId: specie,
+            specieId: specie!,
             referenceId: reference,
             localityId: locality,
-            createdBy: user
+            createdBy: user!
         }
 
         return await saveOccurrence(occurrence).then(r => {
@@ -142,9 +145,9 @@ function OccurrenceForm({ success, setOccurrenceId }: FormProps) {
     }
 
     const reset = () => {
-        setStartDate(undefined)
-        setEndDate(undefined)
-        setTime(undefined)
+        setStartDate(null)
+        setEndDate(null)
+        setTime(null)
         setType(undefined)
         setIsSnuc(false)
         setDuplicate(undefined)

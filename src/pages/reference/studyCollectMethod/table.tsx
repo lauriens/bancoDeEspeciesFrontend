@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 import { Table } from 'antd'
 
 type TableProps = {
-    data: StudyCollectMethod[]
+    data?: StudyCollectMethod[]
 }
 
 function StudyCollectMethodTable({ data }: TableProps) {

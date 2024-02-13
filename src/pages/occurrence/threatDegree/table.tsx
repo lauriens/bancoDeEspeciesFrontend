@@ -4,7 +4,7 @@ import { Table } from 'antd'
 import dayjs from 'dayjs'
 
 type TableProps = {
-    data: ThreatDegree[]
+    data?: ThreatDegree[]
 }
 
 function ThreatDegreeTable({ data }: TableProps) {
@@ -12,7 +12,7 @@ function ThreatDegreeTable({ data }: TableProps) {
         {
             title: 'Espécie',
             key: 'specie',
-            render: (_, record: ThreatDegree) => <p>{`${record?.specie?.genus?.name || ''} ${record?.specie?.name || ''}`}</p>
+            render: (_: string, record: ThreatDegree) => <p>{`${record?.specie?.genus?.name || ''} ${record?.specie?.name || ''}`}</p>
         },
         {
             title: 'Classificação',
@@ -33,12 +33,12 @@ function ThreatDegreeTable({ data }: TableProps) {
         {
             title: 'País',
             key: 'country',
-            render: (_, record: ThreatDegree) => <p>{record.country?.name || ''}</p>
+            render: (_: string, record: ThreatDegree) => <p>{record.country?.name || ''}</p>
         },
         {
             title: 'UF',
             key: 'uf',
-            render: (_, record: ThreatDegree) => <p>{record.uf?.name || ''}</p>
+            render: (_: string, record: ThreatDegree) => <p>{record.uf?.name || ''}</p>
         }
     ]
 

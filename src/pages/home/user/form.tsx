@@ -44,8 +44,8 @@ function UserForm({ success }: FormProps) {
         }
 
         const user = {
-            fullName: name,
-            countryId: country
+            fullName: name!,
+            countryId: country!
         }
 
         return await saveUser(user)

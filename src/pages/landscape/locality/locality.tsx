@@ -8,7 +8,7 @@ import { getLocalities } from '../../../api/landscape/locality'
 
 type PageProps = {
     localityId?: number
-    setLocalityId?: React.Dispatch<React.SetStateAction<number>>
+    setLocalityId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function LocalityPage({ localityId, setLocalityId }: PageProps) {

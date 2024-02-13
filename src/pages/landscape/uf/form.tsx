@@ -50,8 +50,8 @@ function UfForm({ success }: FormProps) {
         }
 
         const uf = {
-            name, 
-            abbreviation,
+            name: name!, 
+            abbreviation: abbreviation!,
             countryId: country
         }
 

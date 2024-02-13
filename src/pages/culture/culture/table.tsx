@@ -3,9 +3,9 @@ import Culture from '../../../dataModels/culture/culture'
 import { Table } from 'antd'
 
 type TableProps = {
-    data: Culture[]
+    data?: Culture[]
     cultureId?: number
-    setCultureId?: React.Dispatch<React.SetStateAction<number>>
+    setCultureId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function CultureTable({ data, cultureId, setCultureId }: TableProps) {

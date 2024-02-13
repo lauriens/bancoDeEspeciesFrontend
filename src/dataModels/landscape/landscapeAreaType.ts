@@ -9,7 +9,7 @@ type LandscapeAreaType = {
 }
 
 export type CreateLandscapeAreaType = {
-    percentage: number
+    percentage?: number
     landscapeId: number
     areaTypeId: number
 }

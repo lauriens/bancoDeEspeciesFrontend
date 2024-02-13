@@ -4,7 +4,7 @@ import { Table } from 'antd'
 import StudyCollectMethodTable from './studyCollectMethod/table'
 
 type ReferenceTableProps = {
-    data: Reference[]
+    data?: Reference[]
 }
 
 function ReferenceTable({ data }: ReferenceTableProps) {

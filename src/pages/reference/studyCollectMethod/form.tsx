@@ -11,6 +11,7 @@ import { getReferenceList } from '../../../api/reference/reference'
 import './form.css'
 import { StepProps } from '../fullReference/steps'
 import { formatForSavingDate } from '../../../infra/formatData'
+import { RangeValue } from 'rc-picker/lib/interface'
 
 type FormProps = {
     success?: React.Dispatch<React.SetStateAction<boolean>>
@@ -25,8 +26,8 @@ function StudyCollectMethodForm({ success, visible = true }: FormProps & StepPro
     const [samplingEffort, setSamplingEffort] = useState<number>()
     const [samplingEffortUnit, setSamplingEffortUnit] = useState<string>()
     const [rangeType, setRangeType] = useState<'date' | 'month' | 'year'>('date')
-    const [startDate, setStartDate] = useState<Dayjs>()
-    const [endDate, setEndDate] = useState<Dayjs>()
+    const [startDate, setStartDate] = useState<Dayjs | null>(null)
+    const [endDate, setEndDate] = useState<Dayjs | null>(null)
     const [materialDestination, setMaterialDestination] = useState<number>()
     const [reference, setReference] = useState<number>()
     const [validate, setValidate] = useState(false)
@@ -50,8 +51,8 @@ function StudyCollectMethodForm({ success, visible = true }: FormProps & StepPro
         }
     }, [shouldReset])
 
-    const onChangeEffort = (value: number) => {
-        setSamplingEffort(value)
+    const onChangeEffort = (value: number | null) => {
+        setSamplingEffort(value || undefined)
     }
 
     const onChangeEffortUnit = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,9 +63,11 @@ function StudyCollectMethodForm({ success, visible = true }: FormProps & StepPro
         setRangeType(e.target.value)
     }
 
-    const onChangeDates = ([start, end]: Dayjs[]) => {
-        setStartDate(start)
-        setEndDate(end)
+    const onChangeDates = (values: RangeValue<Dayjs>) => {
+        if (values) {
+            setStartDate(values[0] || null)
+            setEndDate(values[1] || null)
+        }
     }
  
     const isValid = {
@@ -104,8 +107,8 @@ function StudyCollectMethodForm({ success, visible = true }: FormProps & StepPro
         setSampleDrawing(undefined)
         setSamplingEffort(undefined)
         setSamplingEffortUnit(undefined)
-        setStartDate(undefined)
-        setEndDate(undefined)
+        setStartDate(null)
+        setEndDate(null)
         setMaterialDestination(undefined)
         setValidate(false)
         setShouldReset(false)

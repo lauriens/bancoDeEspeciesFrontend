@@ -71,7 +71,7 @@ export const stepContents = [
 export type StepProps = {
     visible?: boolean
     landscapeId?: number
-    setLandscapeId?: React.Dispatch<React.SetStateAction<number>>
+    setLandscapeId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 export default steps

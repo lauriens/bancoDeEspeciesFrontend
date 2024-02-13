@@ -5,7 +5,7 @@ import OccurrenceTable from '../../occurrence/occurrence/table'
 import CultureTable from '../culture/table'
 
 type TableProps = {
-    data: OccurrenceCulture[]
+    data?: OccurrenceCulture[]
 }
 
 function OccurrenceCultureTable({ data }: TableProps) {

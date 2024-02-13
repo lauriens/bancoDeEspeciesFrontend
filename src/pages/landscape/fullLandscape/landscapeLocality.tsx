@@ -34,8 +34,8 @@ function LandscapeLocality({ visible, landscapeId }: StepProps) {
         }
 
         const landscapeLocality = {
-            landscapeId,
-            localityId
+            landscapeId: landscapeId!,
+            localityId: localityId!
         }
 
         return saveLandscapeLocality(landscapeLocality)

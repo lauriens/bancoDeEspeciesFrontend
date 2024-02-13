@@ -41,8 +41,8 @@ function BiomeLandscape({ visible, landscapeId }: StepProps) {
         }
 
         const biomeLandscape = {
-            landscapeId,
-            biomeId: biome
+            landscapeId: landscapeId!,
+            biomeId: biome!
         }
 
         return await saveBiomeLandscape(biomeLandscape)

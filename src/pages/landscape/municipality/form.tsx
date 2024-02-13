@@ -45,8 +45,8 @@ function MunicipalityForm({ success }: FormProps) {
         }
 
         const municipality = {
-            name, 
-            ufId: uf
+            name: name!, 
+            ufId: uf!
         }
 
         return await saveMunicipality(municipality)

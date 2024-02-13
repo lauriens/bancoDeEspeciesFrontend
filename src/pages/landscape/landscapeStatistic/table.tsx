@@ -3,7 +3,7 @@ import LandscapeStatistic from '../../../dataModels/landscape/landscapeStatistic
 import { Table } from 'antd'
 
 type TableProps = {
-    data: LandscapeStatistic[]
+    data?: LandscapeStatistic[]
 }
 
 function LandscapeStatisticTable({ data }: TableProps) {

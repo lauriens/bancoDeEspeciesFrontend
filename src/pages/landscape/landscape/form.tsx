@@ -15,7 +15,7 @@ import './form.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
-    setLandscapeId: React.Dispatch<React.SetStateAction<number>>
+    setLandscapeId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function LandscapeForm({ success, setLandscapeId }: FormProps) {
@@ -61,16 +61,16 @@ function LandscapeForm({ success, setLandscapeId }: FormProps) {
         }
     }, [shouldReset])
 
-    const onChangeLatitude = (value: number) => {
-        setLatitude(value)
+    const onChangeLatitude = (value: number | null) => {
+        setLatitude(value || undefined)
     }
 
-    const onChangeLongitude = (value: number) => {
-        setLongitude(value)
+    const onChangeLongitude = (value: number | null) => {
+        setLongitude(value || undefined)
     }
 
-    const onChangeRadius = (value: number) => {
-        setRadius(value)
+    const onChangeRadius = (value: number | null) => {
+        setRadius(value || undefined)
     }
 
     const onChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -91,10 +91,10 @@ function LandscapeForm({ success, setLandscapeId }: FormProps) {
         }
 
         const landscape = { 
-            latitude,
-            longitude,
+            latitude: latitude!,
+            longitude: longitude!,
             radius,
-            description,
+            description: description!,
             isProtectedArea: isProtected,
             agroecosystemId: agroecosystem,
             anthromeId: anthrome,
@@ -103,7 +103,7 @@ function LandscapeForm({ success, setLandscapeId }: FormProps) {
         }
 
         return saveLandscape(landscape).then(r => {
-            if (r.success && setLandscapeId) setLandscapeId(r.id)
+            if (r.id && setLandscapeId) setLandscapeId(r.id)
             return r
         })
     }
@@ -118,8 +118,6 @@ function LandscapeForm({ success, setLandscapeId }: FormProps) {
         setAnthrome(undefined)
         setSampleAreaType(undefined)
         setReference(undefined)
-        setValidate(undefined)
-        setShouldReset(undefined)
         setValidate(false)
         setShouldReset(false)
     }

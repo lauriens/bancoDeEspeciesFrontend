@@ -12,9 +12,9 @@ import { formatDate } from '../../../infra/formatData'
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
     cultureId?: number
-    setCultureId: React.Dispatch<React.SetStateAction<number>>
+    setCultureId?: React.Dispatch<React.SetStateAction<number | undefined>>
     occurrenceId?: number
-    setOccurrenceId: React.Dispatch<React.SetStateAction<number>>
+    setOccurrenceId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function OccurrenceCultureForm({ success, cultureId, setCultureId, occurrenceId, setOccurrenceId }: FormProps) {
@@ -65,16 +65,16 @@ function OccurrenceCultureForm({ success, cultureId, setCultureId, occurrenceId,
         setPhenology(e.currentTarget.value)
     }
 
-    const onChangeArea = (value: number) => {
-        setArea(value)
+    const onChangeArea = (value: number | null) => {
+        setArea(value || undefined)
     }
 
-    const onChangePercent = (value: number) => {
-        setPercentage(value)
+    const onChangePercent = (value: number | null) => {
+        setPercentage(value || undefined)
     }
 
-    const onChangeProductivity = (value: number) => {
-        setProductivity(value)
+    const onChangeProductivity = (value: number | null) => {
+        setProductivity(value || undefined)
     }
 
     const onChangeMajority = () => {
@@ -83,12 +83,12 @@ function OccurrenceCultureForm({ success, cultureId, setCultureId, occurrenceId,
 
     const onChangeCulture = (value: number) => {
         setCulture(value)
-        setCultureId(value)
+        if (setCultureId) setCultureId(value)
     }
 
     const onChangeOccurrence = (value: number) => {
         setOccurrence(value)
-        setOccurrenceId(value)
+        if (setOccurrenceId) setOccurrenceId(value)
     }
 
     const save = async () => {
@@ -108,8 +108,8 @@ function OccurrenceCultureForm({ success, cultureId, setCultureId, occurrenceId,
         }
 
         const occurrenceCulture = {
-            cultureId: culture,
-            occurrenceId: occurrence,
+            cultureId: culture!,
+            occurrenceId: occurrence!,
             stage,
             phenology,
             percentage,

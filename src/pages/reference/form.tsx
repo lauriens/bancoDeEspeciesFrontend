@@ -52,8 +52,8 @@ function ReferenceForm({ success, visible }: FormProps & StepProps) {
         setAuthorName(e.currentTarget.value)
     }
 
-    const onChangeYear = (value: number) => {
-        setYear(value)
+    const onChangeYear = (value: number | null) => {
+        setYear(value || undefined)
     }
 
     const isValid = {
@@ -74,10 +74,10 @@ function ReferenceForm({ success, visible }: FormProps & StepProps) {
         }
 
         const reference: CreateReference = {
-            title: referenceTitle,
-            authorName,
-            year,
-            referenceTypeId: referenceType
+            title: referenceTitle!,
+            authorName: authorName!,
+            year: year!,
+            referenceTypeId: referenceType!
         }
         
         return saveReference(reference) 

@@ -13,13 +13,13 @@ type StudyCollectMethod = {
 }
 
 export type CreateStudyCollectMethod = {
-    sampleDrawing: number
-    samplingEffort: number
-    samplingEffortUnit: string
-    collectStartDate: string
-    collectEndDate: string
-    materialDestinationId: number
-    referenceId: number
+    sampleDrawing?: number
+    samplingEffort?: number
+    samplingEffortUnit?: string
+    collectStartDate?: string
+    collectEndDate?: string
+    materialDestinationId?: number
+    referenceId?: number
 }
 
 export const SampleDrawings = [

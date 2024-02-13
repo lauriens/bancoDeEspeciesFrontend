@@ -6,7 +6,7 @@ import '../../../styles/styles.css'
 type TableProps = {
     data: Locality[]
     localityId?: number
-    setLocalityId?: React.Dispatch<React.SetStateAction<number>>
+    setLocalityId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function LocalityTable({ data, localityId, setLocalityId }: TableProps) {
@@ -29,7 +29,7 @@ function LocalityTable({ data, localityId, setLocalityId }: TableProps) {
         {
             title: 'Tipo de Área Amostrada',
             key: 'type',
-            render: (_, record: Locality) => <p>{record.sampleAreaType?.name || ''}</p>
+            render: (_: string, record: Locality) => <p>{record.sampleAreaType?.name || ''}</p>
         }
     ]
 

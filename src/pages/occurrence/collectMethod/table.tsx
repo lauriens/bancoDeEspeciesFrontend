@@ -3,7 +3,7 @@ import CollectMethod, { MethodType } from '../../../dataModels/occurrence/collec
 import { Table } from 'antd'
 
 type TableProps = {
-    data: CollectMethod[]
+    data?: CollectMethod[]
 }
 
 function CollectMethodTable({ data }: TableProps) {

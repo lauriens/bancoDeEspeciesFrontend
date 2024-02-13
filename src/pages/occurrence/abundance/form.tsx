@@ -11,9 +11,9 @@ import { formatDate } from '../../../infra/formatData'
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
     landscapeId?: number
-    setLandscapeId: React.Dispatch<React.SetStateAction<number>>
+    setLandscapeId?: React.Dispatch<React.SetStateAction<number | undefined>>
     occurrenceId?: number
-    setOccurrenceId: React.Dispatch<React.SetStateAction<number>>
+    setOccurrenceId?: React.Dispatch<React.SetStateAction<number | undefined>>
 }
 
 function AbundanceForm({ success, occurrenceId, setOccurrenceId, landscapeId, setLandscapeId }: FormProps) {

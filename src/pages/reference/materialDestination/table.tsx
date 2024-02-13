@@ -3,7 +3,7 @@ import MaterialDestination from '../../../dataModels/reference/materialDestinati
 import { Table } from 'antd'
 
 type TableProps = {
-    data: MaterialDestination[]
+    data?: MaterialDestination[]
 }
 
 function MaterialDestinationTable({ data }: TableProps) {

@@ -22,7 +22,7 @@ function ThreatDegreeForm({ success }: FormProps) {
     const [countries, setCountries] = useState<Country[]>()
     const [species, setSpecies] = useState<Specie[]>()
     const [classification, setClassification] = useState<string>()
-    const [resolutionDate, setResolutionDate] = useState<Dayjs>()
+    const [resolutionDate, setResolutionDate] = useState<Dayjs | null>(null)
     const [source, setSource] = useState<number>()
     const [uf, setUf] = useState<number>()
     const [country, setCountry] = useState<number>()
@@ -58,7 +58,7 @@ function ThreatDegreeForm({ success }: FormProps) {
 
     const reset = () => {
         setClassification(undefined)
-        setResolutionDate(undefined)
+        setResolutionDate(null)
         setSource(undefined)
         setUf(undefined)
         setCountry(undefined)
@@ -70,14 +70,12 @@ function ThreatDegreeForm({ success }: FormProps) {
         classification: (!!classification && classification !== ''),
         date: !!resolutionDate,
         source: (!!source || source === 0),
-        country: (!!country || !!uf || !!specie),
-        uf: (!!country || !!uf || !!specie),
-        specie: (!!country || !!uf || !!specie),
+        specie: !!specie,
         all: (
             (!!classification && classification !== '') &&
             !!resolutionDate &&
             (!!source || source === 0) &&
-            (!!country || !!uf || !!specie)
+            !!specie
         )
     }
 
@@ -91,10 +89,10 @@ function ThreatDegreeForm({ success }: FormProps) {
         }
 
         const threatDegree = {
-            classification,
-            resolutionDate: formatForSavingDate(resolutionDate),
-            source,
-            specieId: specie,
+            classification: classification!,
+            resolutionDate: formatForSavingDate(resolutionDate!)!,
+            source: source!,
+            specieId: specie!,
             ufId: uf,
             countryId: country
         }
@@ -129,7 +127,6 @@ function ThreatDegreeForm({ success }: FormProps) {
                 value={country} 
                 options={countries?.map(c => { return { label: c.name, value: c.id }})} 
                 onChange={setCountry} 
-                status={!isValid.country && validate ? 'error': ''}
             />
             <label className='input-label col1'>
                 UF
@@ -139,7 +136,6 @@ function ThreatDegreeForm({ success }: FormProps) {
                 value={uf} 
                 options={ufs?.map(c => { return { label: c.name, value: c.id }})} 
                 onChange={setUf} 
-                status={!isValid.uf && validate ? 'error': ''}
             />
             <label className='input-label col1'>
                 Espécie

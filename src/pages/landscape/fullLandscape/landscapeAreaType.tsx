@@ -26,8 +26,8 @@ function LandscapeAreaType({ visible, landscapeId }: StepProps) {
         if (shouldReset) reset()
     }, [shouldReset])
 
-    const onChangePercent = (value: number) => {
-        setPercentage(value)
+    const onChangePercent = (value: number | null) => {
+        setPercentage(value || undefined)
     }
 
     const save = async () => {
@@ -46,8 +46,8 @@ function LandscapeAreaType({ visible, landscapeId }: StepProps) {
         }
 
         const landscapeAreaType = {
-            landscapeId,
-            areaTypeId: areaType,
+            landscapeId: landscapeId!,
+            areaTypeId: areaType!,
             percentage
         }
 
