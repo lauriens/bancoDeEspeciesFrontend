@@ -18,7 +18,7 @@ type FormProps = {
 
 const { RangePicker } = DatePicker
 
-function StudyCollectMethodForm({ success, visible }: FormProps & StepProps) {
+function StudyCollectMethodForm({ success, visible = true }: FormProps & StepProps) {
     const [materialDestinations, setMaterialDestinations] = useState<MaterialDestinationList[]>()
     const [references, setReferences] = useState<ReferenceList[]>()
     const [sampleDrawing, setSampleDrawing] = useState<number>()

@@ -33,7 +33,7 @@ export const stepContents = [
 ]
 
 export type StepProps = {
-    visible: boolean
+    visible?: boolean
 }
 
 export default steps
