@@ -1,6 +1,5 @@
-import AreaType from "../../../dataModels/landscape/areaType"
 import LandscapePage from "../landscape/landscape"
-import LandscapeStatisticForm from "../landscapeStatistic/form"
+import LandscapeStatisticPage from "../landscapeStatistic/landscapeStatistic"
 import BiomeLandscape from "./biomeLandscape"
 import FirstStep from "./firstStep"
 import LandscapeAreaType from "./landscapeAreaType"
@@ -65,7 +64,7 @@ export const stepContents = [
     },
     {
         key: 'LandscapeStatistic',
-        content: LandscapeStatisticForm
+        content: LandscapeStatisticPage
     }
 ]
 
