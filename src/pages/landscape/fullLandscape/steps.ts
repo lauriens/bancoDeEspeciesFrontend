@@ -1,5 +1,6 @@
 import AreaType from "../../../dataModels/landscape/areaType"
 import LandscapePage from "../landscape/landscape"
+import LandscapeStatisticForm from "../landscapeStatistic/form"
 import BiomeLandscape from "./biomeLandscape"
 import FirstStep from "./firstStep"
 import LandscapeAreaType from "./landscapeAreaType"
@@ -30,6 +31,10 @@ const steps = [
     {
         key: 'LandscapeLocality',
         title: 'Localidade'
+    }, 
+    {
+        key: 'LandscapeStatistic',
+        title: 'Estatísticas'
     }
 ]
 
@@ -57,6 +62,10 @@ export const stepContents = [
     {
         key: 'LandscapeLocality',
         content: LandscapeLocality
+    },
+    {
+        key: 'LandscapeStatistic',
+        content: LandscapeStatisticForm
     }
 ]
 

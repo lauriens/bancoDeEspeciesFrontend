@@ -2,12 +2,9 @@ import { Input } from 'antd'
 import React, { useEffect, useState } from 'react'
 import SaveButton from '../../../components/savingNotification'
 import { saveLandscapeStatistic } from '../../../api/landscape/landscapeStatistic'
+import { StepProps } from '../fullLandscape/steps'
 
-type FormProps = {
-    landscapeId: number
-}
-
-function LandscapeStatisticForm({ landscapeId }: FormProps) {
+function LandscapeStatisticForm({ visible, landscapeId }: StepProps) {
     const [name, setName] = useState<string>()
     const [value, setValue] = useState<string>()
     const [validate, setValidate] = useState(false)
@@ -64,6 +61,8 @@ function LandscapeStatisticForm({ landscapeId }: FormProps) {
         setValidate(false)
         setShouldReset(false)
     }
+
+    if (!visible) return null
 
     return (
         <div className='form-grid'>
