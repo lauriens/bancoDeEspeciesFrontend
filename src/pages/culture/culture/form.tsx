@@ -7,6 +7,7 @@ import { saveCulture } from '../../../api/culture/culture'
 import SaveButton from '../../../components/savingNotification'
 import { SpecieTypes, timeSincePlantingUnits } from '../../../dataModels/culture/culture'
 import './form.css'
+import { getCultureSpecies } from '../../../api/taxonomy/cultureSpecie'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
@@ -33,6 +34,10 @@ function CultureForm({ success, landscapeId, setCultureId }: FormProps) {
         getLandscapes().then(d => {
             if (d.success) setLandscapes(d.data)
             else message.error('Falha em buscar paisagens')
+        })
+        getCultureSpecies().then(d => {
+            if (d.success) setSpecies(d.data)
+            else message.error('Falha em buscar espécies')
         })
     }, [])
 

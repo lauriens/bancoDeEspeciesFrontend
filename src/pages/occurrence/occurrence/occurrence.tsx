@@ -4,8 +4,9 @@ import OccurrenceForm from "./form"
 import Occurrence from "../../../dataModels/occurrence/occurrence"
 import { getOccurrences } from "../../../api/occurrence/occurrence"
 import OccurrenceTable from "./table"
+import { StepProps } from "../../culture/fullCulture/steps"
 
-function OccurrencePage() {
+function OccurrencePage({ visible = true, occurrenceId, setOccurrenceId }: StepProps) {
     const [shouldReload, setShouldReload] = useState(true)
     const [occurrences, setOccurrences] = useState<Occurrence[]>()
 
@@ -19,13 +20,15 @@ function OccurrencePage() {
         }
     }, [shouldReload])
 
+    if (!visible) return null
+
     return (
         <div className='occurrence'>
             <Collapse
                 defaultActiveKey={['1']} 
-                items={[{ key: '1', label: 'Criar ocorrência', children: <OccurrenceForm success={setShouldReload} /> }]}
+                items={[{ key: '1', label: 'Criar ocorrência', children: <OccurrenceForm success={setShouldReload} setOccurrenceId={setOccurrenceId} /> }]}
             />
-            <OccurrenceTable data={occurrences} />
+            <OccurrenceTable data={occurrences} occurrenceId={occurrenceId} setOccurrenceId={setOccurrenceId} />
         </div>
     )
 }

@@ -415,6 +415,19 @@ const routes = [
         label: 'Cultura',
         children: [
             {
+                key: 'FullCulture',
+                label: (
+                    <NavLink
+                        to='/culturaCompleta'
+                        className={({ isActive, isPending }) => 
+                            isPending ? 'pending' : isActive ? 'active' : ''
+                        }
+                    >
+                        Cultura Completa
+                    </NavLink>
+                )
+            },
+            {
                 key: 'Culture',
                 label: (
                     <NavLink

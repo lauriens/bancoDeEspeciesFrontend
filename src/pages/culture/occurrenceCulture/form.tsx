@@ -12,10 +12,12 @@ import { formatDate } from '../../../infra/formatData'
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
     cultureId?: number
+    setCultureId: React.Dispatch<React.SetStateAction<number>>
     occurrenceId?: number
+    setOccurrenceId: React.Dispatch<React.SetStateAction<number>>
 }
 
-function OccurrenceCultureForm({ success, cultureId, occurrenceId }: FormProps) {
+function OccurrenceCultureForm({ success, cultureId, setCultureId, occurrenceId, setOccurrenceId }: FormProps) {
     const [cultures, setCultures] = useState<Culture[]>()
     const [occurrences, setOccurrences] = useState<Occurrence[]>()
     const [culture, setCulture] = useState<number>()
@@ -79,6 +81,16 @@ function OccurrenceCultureForm({ success, cultureId, occurrenceId }: FormProps) 
         setIsMajority(!isMajority)
     }
 
+    const onChangeCulture = (value: number) => {
+        setCulture(value)
+        setCultureId(value)
+    }
+
+    const onChangeOccurrence = (value: number) => {
+        setOccurrence(value)
+        setOccurrenceId(value)
+    }
+
     const save = async () => {
         if (!isValid.culture) {
             setValidate(true)
@@ -135,7 +147,7 @@ function OccurrenceCultureForm({ success, cultureId, occurrenceId }: FormProps) 
             <Select 
                 value={culture} 
                 options={cultures?.map(c => { return { label: `${c.commonName}: ${c.variety || c.phenology || (c.timeSincePlanting || '' + ' ' + c.timeSincePlantingUnit || '')}`, value: c.id }})} 
-                onChange={setCulture}
+                onChange={onChangeCulture}
                 status={!isValid.culture && validate ? 'error': ''}
             />
             <label className='input-label col1'>
@@ -144,7 +156,7 @@ function OccurrenceCultureForm({ success, cultureId, occurrenceId }: FormProps) 
             <Select 
                 value={occurrence} 
                 options={occurrences?.map(c => { return { label: `${c.specie?.genus?.name || ''} ${c.specie?.name || ''}: ${c.locality?.name || ''}: ${formatDate(c.startDate)} - ${formatDate(c.endDate)}`, value: c.id }})} 
-                onChange={setOccurrence}
+                onChange={onChangeOccurrence}
                 status={!isValid.occurrence && validate ? 'error': ''}
             />
             <label className='input-label col1'>

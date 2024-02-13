@@ -11,7 +11,16 @@ async function getOccurrenceCultures() {
     return await baseGet<OccurrenceCulture[]>(controller)
 }
 
+async function getFilteredOccurrenceCultures(cultureId?: number, occurrenceId?: number) {
+    const query = {
+        cultureId,
+        occurrenceId
+    }
+    return await baseGet<OccurrenceCulture[]>(`${controller}/byOccurrenceOrCulture`, query)
+}
+
 export { 
     saveOccurrenceCulture,
-    getOccurrenceCultures
+    getOccurrenceCultures,
+    getFilteredOccurrenceCultures
 }

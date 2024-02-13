@@ -32,6 +32,7 @@ import FullLandscape from "../pages/landscape/fullLandscape/fullLandscape"
 import CultureSpecie from "../pages/taxonomy/forms/cultureSpecie/cultureSpecie"
 import Culture from "../pages/culture/culture/culture"
 import OccurrenceCulture from "../pages/culture/occurrenceCulture/occurrenceCulture"
+import FullCulture from "../pages/culture/fullCulture/fullCulture"
 
 const routes = [
     {
@@ -172,6 +173,10 @@ const routes = [
             {
                 path: '/culturaOcorrencia',
                 Component: OccurrenceCulture
+            },
+            {
+                path: '/culturaCompleta',
+                Component: FullCulture
             }
         ]
     }

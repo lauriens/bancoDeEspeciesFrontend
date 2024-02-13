@@ -5,9 +5,11 @@ import { formatDate, formatTime } from '../../../infra/formatData'
 
 type TableProps = {
     data: Occurrence[]
+    occurrenceId?: number
+    setOccurrenceId?: React.Dispatch<React.SetStateAction<number>>
 }
 
-function OccurrenceTable( { data }: TableProps) {
+function OccurrenceTable( { data, occurrenceId, setOccurrenceId }: TableProps) {
     const columns = [
         {
             title: 'Espécie',
@@ -54,7 +56,15 @@ function OccurrenceTable( { data }: TableProps) {
             expandable={{
                 expandedRowRender: (record: Occurrence) => <p style={{ margin: 0 }}>{`${record.locality?.name || ''}: ${record.locality?.latitude || ''}, ${record.locality?.longitude || ''}`}</p>,
                 rowExpandable: (record: Occurrence) => !!record.locality?.name,
-              }}
+            }}
+            rowClassName={(row: Occurrence) => row.id === occurrenceId ? 'row-selected' : ''} 
+            onRow={(record: Occurrence) => {
+                return {
+                onClick: () => {
+                    if (setOccurrenceId) setOccurrenceId(record.id)
+                },
+                };
+            }}
         />
     )
 }

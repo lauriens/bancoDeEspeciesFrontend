@@ -24,9 +24,10 @@ const { TextArea } = Input
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
+    setOccurrenceId?: React.Dispatch<React.SetStateAction<number>>
 }
 
-function OccurrenceForm({ success }: FormProps) {
+function OccurrenceForm({ success, setOccurrenceId }: FormProps) {
     const [species, setSpecies] = useState<Specie[]>()
     const [threatDegrees, setThreatDegrees] = useState<ThreatDegree[]>()
     const [collectMethods, setCollectMethods] = useState<CollectMethod[]>()
@@ -134,7 +135,10 @@ function OccurrenceForm({ success }: FormProps) {
             createdBy: user
         }
 
-        return await saveOccurrence(occurrence)
+        return await saveOccurrence(occurrence).then(r => {
+            if (r.id && setOccurrenceId) setOccurrenceId(r.id)
+            return r
+        })
     }
 
     const reset = () => {

@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { AxiosRequestConfig, AxiosResponse } from "axios";
 import GetResponse from "../dataModels/getResponse";
 import SaveResponse from "../dataModels/saveResponse";
 import { axiosInstance } from "../infra/apiConfig";
@@ -24,9 +24,12 @@ async function basePost<T>(url: string, data: T): Promise<SaveResponse> {
     }
 }
 
-async function baseGet<T>(url: string): Promise<GetResponse<T>> {
+async function baseGet<T, U = any>(url: string, query?: U): Promise<GetResponse<T>> {
     try {
-        var response = await axiosInstance.get<T>(url)
+        const config: AxiosRequestConfig = {
+            params: query
+        }
+        var response = await axiosInstance.get<T>(url, config)
 
         if (response.status == 200)
             return {

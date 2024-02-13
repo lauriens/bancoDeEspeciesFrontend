@@ -1,3 +1,55 @@
+import LandscapePage from "../../landscape/landscape/landscape"
+import OccurrencePage from "../../occurrence/occurrence/occurrence"
+import CulturePage from "../culture/culture"
+import OccurrenceCulturePage from "../occurrenceCulture/occurrenceCulture"
+import FirstStep from "./firstStep"
+
+const steps = [
+    {
+        key: 'FirstStep',
+        title: 'Novos Parâmetros?'
+    },
+    {
+        key: 'Landscape',
+        title: 'Paisagem'
+    },
+    {
+        key: 'Culture',
+        title: 'Cultura'
+    },
+    {
+        key: 'Occurrence',
+        title: 'Ocorrência'
+    },
+    {
+        key: 'OccurrenceCulture',
+        title: 'Cultura - Ocorrência'
+    }
+]
+
+export const stepContents = [
+    {
+        key: 'FirstStep',
+        content: FirstStep
+    },
+    {
+        key: 'Landscape',
+        content: LandscapePage
+    },
+    {
+        key: 'Culture',
+        content: CulturePage
+    },
+    {
+        key: 'Occurrence',
+        content: OccurrencePage
+    },
+    {
+        key: 'OccurrenceCulture',
+        content: OccurrenceCulturePage
+    }
+]
+
 export type StepProps = {
     visible?: boolean
     landscapeId?: number
@@ -7,3 +59,5 @@ export type StepProps = {
     occurrenceId?: number
     setOccurrenceId?: React.Dispatch<React.SetStateAction<number>>
 }
+
+export default steps
