@@ -1,4 +1,6 @@
+import ThreatDegreePage from "../../occurrence/threatDegree/threatDegree"
 import Class from "../forms/class/class"
+import CultureSpecie from "../forms/cultureSpecie/cultureSpecie"
 import Domain from "../forms/domain/domain"
 import Family from "../forms/family/family"
 import Genus from "../forms/genus/genus"
@@ -44,6 +46,14 @@ export const steps = [
     {
         key: 'Specie',
         title: 'Espécie'
+    },
+    {
+        key: 'CultureSpecie',
+        title: 'Cultura'
+    },
+    {
+        key: 'ThreatDegree',
+        title: 'Ameaça'
     }
 ]
 
@@ -83,6 +93,14 @@ export const stepContents = [
     {
         key: 'Specie',
         content: Specie
+    },
+    {
+        key: 'CultureSpecie',
+        content: CultureSpecie
+    },
+    {
+        key: 'ThreatDegree',
+        content: ThreatDegreePage
     }
 ]
 

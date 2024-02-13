@@ -127,6 +127,17 @@ const routes = [
                                 >
                                     Espécie
                                 </NavLink>
+                    },
+                    {
+                        key: 'EspecieCultura',
+                        label: <NavLink
+                                    to="/especieCultura"
+                                    className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "active" : ""
+                                    }
+                                >
+                                    Espécie da Cultura
+                                </NavLink>
                     }
                 ]
             }

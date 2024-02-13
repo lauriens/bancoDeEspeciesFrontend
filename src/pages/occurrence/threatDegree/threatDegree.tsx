@@ -4,8 +4,9 @@ import { Collapse, message } from 'antd'
 import ThreatDegreeForm from './form'
 import ThreatDegreeTable from './table'
 import { getThreatDegrees } from '../../../api/occurrence/threatDegree'
+import { StepProps } from '../../taxonomy/taxonomyTree/steps'
 
-function ThreatDegreePage() {
+function ThreatDegreePage({ visible = true }: StepProps) {
     const [shouldReload, setShouldReload] = useState(true)
     const [threatDegrees, setThreatDegrees] = useState<ThreatDegree[]>()
 
@@ -17,7 +18,9 @@ function ThreatDegreePage() {
                 setShouldReload(false)
             })
         }
-    })
+    }, [shouldReload])
+
+    if (!visible) return null
 
     return (
         <div className='threat-degree'>
