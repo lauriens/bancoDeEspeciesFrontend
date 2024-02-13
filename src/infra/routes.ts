@@ -30,6 +30,8 @@ import Municipality from "../pages/landscape/municipality/municipality"
 import AreaType from "../pages/landscape/areaType/areaType"
 import FullLandscape from "../pages/landscape/fullLandscape/fullLandscape"
 import CultureSpecie from "../pages/taxonomy/forms/cultureSpecie/cultureSpecie"
+import Culture from "../pages/culture/culture/culture"
+import OccurrenceCulture from "../pages/culture/occurrenceCulture/occurrenceCulture"
 
 const routes = [
     {
@@ -162,6 +164,14 @@ const routes = [
             {
                 path: '/especieCultura',
                 Component: CultureSpecie
+            },
+            {
+                path: '/cultura',
+                Component: Culture
+            },
+            {
+                path: '/culturaOcorrencia',
+                Component: OccurrenceCulture
             }
         ]
     }

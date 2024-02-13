@@ -411,6 +411,38 @@ const routes = [
         ]
     },
     {
+        key: 'Cultura',
+        label: 'Cultura',
+        children: [
+            {
+                key: 'Culture',
+                label: (
+                    <NavLink
+                        to='/cultura'
+                        className={({ isActive, isPending }) => 
+                            isPending ? 'pending' : isActive ? 'active' : ''
+                        }
+                    >
+                        Cultura
+                    </NavLink>
+                )
+            },
+            {
+                key: 'OccurrenceCulture',
+                label: (
+                    <NavLink
+                        to='/culturaOcorrencia'
+                        className={({ isActive, isPending }) => 
+                            isPending ? 'pending' : isActive ? 'active' : ''
+                        }
+                    >
+                        Cultura - Ocorrência
+                    </NavLink>
+                )
+            }
+        ]
+    },
+    {
         key: 'User',
         label: (
             <NavLink

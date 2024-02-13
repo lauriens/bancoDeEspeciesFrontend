@@ -3,6 +3,7 @@ import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 
 export const formatDate = (date: string) => {
+    if (!date) return ''
     dayjs.extend(utc)
     dayjs.extend(timezone)
     return dayjs.tz(date, 'America/Sao_Paulo').format('DD/MM/YYYY')

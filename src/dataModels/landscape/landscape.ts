@@ -1,6 +1,7 @@
 import Reference from "../reference/reference"
 import Agroecosystem from "./agroecosystem"
 import Anthrome from "./anthrome"
+import Locality from "./locality"
 import SampleAreaType from "./sampleAreaType"
 
 type Landscape = {
@@ -14,6 +15,7 @@ type Landscape = {
     anthrome?: Anthrome
     sampleAreaType?: SampleAreaType
     reference?: Reference
+    localities: Locality[]
 }
 
 export type CreateLandscape = {
