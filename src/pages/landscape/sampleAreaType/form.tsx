@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import SaveButton from '../../../components/savingNotification'
 import './form.css'
 import { saveSampleAreaType } from '../../../api/landscape/sampleAreaType'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

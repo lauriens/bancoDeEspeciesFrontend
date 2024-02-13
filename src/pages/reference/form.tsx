@@ -7,6 +7,7 @@ import { CreateReference } from '../../dataModels/reference/reference'
 import { saveReference } from '../../api/reference/reference'
 import './form.css'
 import { StepProps } from './fullReference/steps'
+import '../../styles/styles.css'
 
 type FormProps = {
     success?: React.Dispatch<React.SetStateAction<boolean>>

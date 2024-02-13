@@ -3,6 +3,7 @@ import SaveResponse from '../../dataModels/saveResponse'
 import { Input } from 'antd'
 import SaveButton from '../savingNotification'
 import './parameterForm.css'
+import '../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

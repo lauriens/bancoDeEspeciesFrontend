@@ -4,6 +4,7 @@ import { MethodType } from '../../../dataModels/occurrence/collectMethod'
 import SaveButton from '../../../components/savingNotification'
 import { saveCollectMethod } from '../../../api/occurrence/collectMethod'
 import './form.css'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

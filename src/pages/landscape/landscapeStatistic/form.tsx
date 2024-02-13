@@ -2,6 +2,7 @@ import { Input } from 'antd'
 import React, { useEffect, useState } from 'react'
 import SaveButton from '../../../components/savingNotification'
 import { saveLandscapeStatistic } from '../../../api/landscape/landscapeStatistic'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

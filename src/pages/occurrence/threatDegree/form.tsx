@@ -12,6 +12,7 @@ import { saveThreatDegree } from '../../../api/occurrence/threatDegree'
 import Specie from '../../../dataModels/taxonomy/specie'
 import './form.css'
 import { formatForSavingDate } from '../../../infra/formatData'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

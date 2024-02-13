@@ -4,6 +4,7 @@ import SaveButton from '../../../components/savingNotification'
 import { CreateReferenceType } from '../../../dataModels/reference/referenceType'
 import { saveReferenceType } from '../../../api/reference/referenceType'
 import './form.css'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

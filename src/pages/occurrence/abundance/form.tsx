@@ -7,6 +7,7 @@ import { getOccurrences } from '../../../api/occurrence/occurrence'
 import { saveAbundance } from '../../../api/occurrence/abundance'
 import SaveButton from '../../../components/savingNotification'
 import { formatDate } from '../../../infra/formatData'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

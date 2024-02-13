@@ -4,6 +4,7 @@ import { getCountries } from '../../../api/landscape/country'
 import { Input, Select, message } from 'antd'
 import SaveButton from '../../../components/savingNotification'
 import { saveUser } from '../../../api/user/user'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

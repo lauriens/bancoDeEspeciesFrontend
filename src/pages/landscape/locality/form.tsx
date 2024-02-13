@@ -4,6 +4,7 @@ import { getSampleAreaTypes, saveSampleAreaType } from '../../../api/landscape/s
 import { Input, InputNumber, Select, message } from 'antd'
 import { saveLocality } from '../../../api/landscape/locality'
 import SaveButton from '../../../components/savingNotification'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>

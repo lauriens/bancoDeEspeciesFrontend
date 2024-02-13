@@ -5,6 +5,7 @@ import { saveUf } from '../../../api/landscape/uf'
 import './form.css'
 import Country from '../../../dataModels/landscape/country'
 import { getCountries } from '../../../api/landscape/country'
+import '../../../styles/styles.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
