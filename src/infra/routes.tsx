@@ -34,10 +34,13 @@ import Culture from "../pages/culture/culture/culture"
 import OccurrenceCulture from "../pages/culture/occurrenceCulture/occurrenceCulture"
 import FullCulture from "../pages/culture/fullCulture/fullCulture"
 import Abundance from "../pages/occurrence/abundance/abundance"
+import ErrorPage from "../pages/home/error"
+import React from "react"
 
 const routes = [
     {
         element: Layout(),
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
