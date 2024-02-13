@@ -1,12 +1,15 @@
 import React from 'react'
 import Locality from '../../../dataModels/landscape/locality'
 import { Table } from 'antd'
+import '../../../styles/styles.css'
 
 type TableProps = {
     data: Locality[]
+    localityId?: number
+    setLocalityId?: React.Dispatch<React.SetStateAction<number>>
 }
 
-function LocalityTable({ data }: TableProps) {
+function LocalityTable({ data, localityId, setLocalityId }: TableProps) {
     const columns = [
         {
             title: 'Nome',
@@ -31,7 +34,18 @@ function LocalityTable({ data }: TableProps) {
     ]
 
     return (
-        <Table dataSource={data?.map(d => { return { ...d, key: d.id }})} columns={columns} />
+        <Table 
+            dataSource={data?.map(d => { return { ...d, key: d.id }})} 
+            columns={columns} 
+            rowClassName={row => row.id === localityId ? 'row-selected' : ''} 
+            onRow={record => {
+                return {
+                  onClick: () => {
+                    if (setLocalityId) setLocalityId(record.id)
+                  },
+                };
+              }}
+        />
     )
 }
 

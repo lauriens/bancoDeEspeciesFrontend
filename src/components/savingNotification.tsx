@@ -46,7 +46,7 @@ function SaveButton({ saveFunction, entity, success, className }: NotificationPr
     }
 
     return (
-        <div className={className}>
+        <div className={`save-button ${className}`}>
             {contextHolder}
             <Button onClick={save}>
                 Salvar

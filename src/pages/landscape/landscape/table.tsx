@@ -1,12 +1,15 @@
 import React from 'react'
 import Landscape from '../../../dataModels/landscape/landscape'
 import { Table } from 'antd'
+import '../../../styles/styles.css'
 
 type TableProps = {
     data: Landscape[]
+    landscapeId?: number
+    setLandscapeId?: React.Dispatch<React.SetStateAction<number>>
 }
 
-function LandscapeTable({ data }: TableProps) {
+function LandscapeTable({ data, landscapeId, setLandscapeId }: TableProps) {
     const columns = [
         {
             title: 'Latitude',
@@ -52,7 +55,18 @@ function LandscapeTable({ data }: TableProps) {
     ]
 
     return (
-        <Table dataSource={data?.map(d => { return { ...d, key: d.id }})} columns={columns} />
+        <Table 
+            dataSource={data?.map(d => { return { ...d, key: d.id }})} 
+            columns={columns} 
+            rowClassName={row => row.id === landscapeId ? 'row-selected' : ''} 
+            onRow={record => {
+                return {
+                  onClick: () => {
+                    if (setLandscapeId) setLandscapeId(record.id)
+                  },
+                };
+              }}
+        />
     )
 }
 

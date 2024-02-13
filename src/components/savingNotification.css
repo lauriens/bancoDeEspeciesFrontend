@@ -18,3 +18,7 @@
   .error {
     color: #ff4d4f;
   }
+
+  .save-button {
+    margin-left: 0.5rem;
+  }

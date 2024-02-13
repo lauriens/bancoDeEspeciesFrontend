@@ -23,3 +23,7 @@
         grid-column: 1;
     }
 }
+
+.row-selected {
+    background-color: #bae0ff;
+}

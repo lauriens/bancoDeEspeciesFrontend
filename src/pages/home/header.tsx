@@ -256,6 +256,19 @@ const routes = [
         label: 'Paisagem',
         children: [
             {
+                key: 'FullLandscape',
+                label:(
+                    <NavLink
+                        to="/paisagemCompleta"
+                        className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Paisagem Completa
+                    </NavLink>
+                )
+            },
+            {
                 key: 'Landscape',
                 label:(
                     <NavLink

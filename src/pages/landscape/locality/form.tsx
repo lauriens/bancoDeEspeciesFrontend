@@ -7,9 +7,10 @@ import SaveButton from '../../../components/savingNotification'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
+    setLocalityId: React.Dispatch<React.SetStateAction<number>>
 }
 
-function LocalityForm({ success }: FormProps) {
+function LocalityForm({ success, setLocalityId }: FormProps) {
     const [sampleAreaTypes, setSampleAreaTypes] = useState<SampleAreaType[]>()
     const [name, setName] = useState<string>()
     const [latitude, setLatitude] = useState<number>()
@@ -60,7 +61,10 @@ function LocalityForm({ success }: FormProps) {
             sampleAreaTypeId: sampleAreaType
         }
 
-        return await saveLocality(locality)
+        return await saveLocality(locality).then(r => {
+            if (r.id && setLocalityId) setLocalityId(r.id)
+            return r
+        })
     }
 
     const reset = () => {

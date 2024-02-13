@@ -28,6 +28,7 @@ import Landscape from "../pages/landscape/landscape/landscape"
 import Agroecosystem from "../pages/landscape/agroecosystem/agroecosystem"
 import Municipality from "../pages/landscape/municipality/municipality"
 import AreaType from "../pages/landscape/areaType/areaType"
+import FullLandscape from "../pages/landscape/fullLandscape/fullLandscape"
 
 const routes = [
     {
@@ -152,6 +153,10 @@ const routes = [
             {
                 path: '/tipoArea',
                 Component: AreaType  
+            },
+            {
+                path: '/paisagemCompleta',
+                Component: FullLandscape
             }
         ]
     }

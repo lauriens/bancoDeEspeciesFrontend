@@ -15,9 +15,10 @@ import './form.css'
 
 type FormProps = {
     success: React.Dispatch<React.SetStateAction<boolean>>
+    setLandscapeId: React.Dispatch<React.SetStateAction<number>>
 }
 
-function LandscapeForm({ success }: FormProps) {
+function LandscapeForm({ success, setLandscapeId }: FormProps) {
     const [agroecosystems, setAgroecosystems] = useState<Agroecosystem[]>()
     const [anthromes, setAnthromes] = useState<Anthrome[]>()
     const [sampleAreaTypes, setSampleAreaTypes] = useState<SampleAreaType[]>()
@@ -56,7 +57,7 @@ function LandscapeForm({ success }: FormProps) {
     useEffect(() => {
         if (shouldReset) {
             reset()
-            success(true)
+            if (success) success(true)
         }
     }, [shouldReset])
 
@@ -101,7 +102,10 @@ function LandscapeForm({ success }: FormProps) {
             referenceId: reference
         }
 
-        return await saveLandscape(landscape)
+        return saveLandscape(landscape).then(r => {
+            if (r.success && setLandscapeId) setLandscapeId(r.id)
+            return r
+        })
     }
 
     const reset = () => {

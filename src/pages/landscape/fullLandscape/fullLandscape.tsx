@@ -2,8 +2,9 @@ import { Button, Steps } from 'antd'
 import React, { useState } from 'react'
 import steps, { stepContents } from './steps'
 
-function FullReference() {
+function FullLandscape() {
     const [current, setCurrent] = useState(0)
+    const [landscapeId, setLandscapeId] = useState<number>()
 
     const next = () => {
         setCurrent(current + 1)
@@ -21,7 +22,15 @@ function FullReference() {
         <div className='steps'>
             <Steps onChange={changeStep} current={current} items={steps} />
             <div className='step-content'>
-                { stepContents.map((c, i) => <div key={c.key}>{ c.content({ visible: current === i }) }</div>) }
+                { stepContents.map((c, i) => 
+                    <div key={c.key}>
+                        { c.content({ 
+                            visible: current === i, 
+                            setLandscapeId,
+                            landscapeId
+                        }) }
+                    </div>) 
+                }
             </div>
             <div className='step-buttons'>
                 {current < steps.length - 1 && (
@@ -39,4 +48,4 @@ function FullReference() {
     )
 }
 
-export default FullReference
+export default FullLandscape

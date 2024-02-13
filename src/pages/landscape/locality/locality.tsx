@@ -6,7 +6,12 @@ import './form.css'
 import LocalityTable from './table'
 import { getLocalities } from '../../../api/landscape/locality'
 
-function LocalityPage() {
+type PageProps = {
+    localityId?: number
+    setLocalityId?: React.Dispatch<React.SetStateAction<number>>
+}
+
+function LocalityPage({ localityId, setLocalityId }: PageProps) {
     const [shouldReload, setShouldReload] = useState(true)
     const [localities, setLocalities] = useState<Locality[]>()
 
@@ -25,10 +30,10 @@ function LocalityPage() {
             <Collapse
                 defaultActiveKey={['1']} 
                 items={[
-                    { key: '1', label: 'Criar Localidade', children: <LocalityForm success={setShouldReload} /> }
+                    { key: '1', label: 'Criar Localidade', children: <LocalityForm success={setShouldReload} setLocalityId={setLocalityId} /> }
                 ]}
             />
-            <LocalityTable data={localities} />
+            <LocalityTable data={localities} localityId={localityId} setLocalityId={setLocalityId} />
         </div>
     )
 }
