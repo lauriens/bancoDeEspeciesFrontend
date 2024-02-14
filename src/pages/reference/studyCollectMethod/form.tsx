@@ -156,7 +156,7 @@ function StudyCollectMethodForm({ success, visible = true }: FormProps & StepPro
                 <RangePicker picker={rangeType} allowEmpty={ [true, true] } value={[startDate, endDate]} onChange={onChangeDates} status={!isValid.dateRange && validate ? 'error' : ''} />
             </label>
             <label className='input-label col1'>
-                Tipo de Referência
+                Destino do Material
             </label>
             <Select 
                 allowClear 
