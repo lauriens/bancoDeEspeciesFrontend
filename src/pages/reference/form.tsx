@@ -87,7 +87,7 @@ function ReferenceForm({ success, visible }: FormProps & StepProps) {
     if (!visible) return null
 
     return (
-        <div className='reference-form'>
+        <div className='form-grid'>
             <label className='input-label col1'>
                 Título
             </label>
